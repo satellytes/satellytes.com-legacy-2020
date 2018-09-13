@@ -1,0 +1,65 @@
+import { injectGlobal } from "styled-components";
+import theme from './theme';
+
+
+import * as fonts from './fonts';
+
+injectGlobal`
+
+  @font-face {
+    font-family: 'Coco Gothic';
+    src: url('${fonts.CocoLightWoff2}') format('woff2'), url('${fonts.CocoLightWoff2}') format('woff');
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Coco Gothic';
+    src: url('${fonts.CocoLightItalicWoff}') format('woff2'), url('${fonts.CocoLightItalicWoff2}') format('woff');
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Coco Gothic';
+    src: url('${fonts.CocoRegularWoff2}') format('woff2'), url('${fonts.CocoRegularWoff}') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Coco Gothic';
+    src: url('${fonts.CocoBldWoff2}') format('woff2'), url('${fonts.CocoBldWoff}') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  html {
+    font-size: ${10/16 * 100}%;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: ${theme.colors.dark};
+    color: #fff;
+    font-size: 1.5rem;
+
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  a {
+    color: inherit;
+  }
+`
