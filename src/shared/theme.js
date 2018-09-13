@@ -3,6 +3,7 @@ const theme = {
     white: '#ffffff',
     dark: '#202840',
     light: '#5CCFE6',
+    grey: '#A9A9A9'
   },
   fontFamily: {
     coco: 'Coco Gothic',

@@ -16,7 +16,7 @@ const Left = styled.div`
 const Right = styled.div`
   flex: 0 0 50%;
 `
-const SectionContact = () => (
+const SectionContact = ({events}) => (
   <Layout>
     <Left>
       <h2>Kontakt</h2>
