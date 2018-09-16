@@ -11,9 +11,16 @@ import './layout.css'
 import theme from '../shared/theme';
 import { ThemeProvider } from 'styled-components';
 import '../shared/globalStyles';
+import styled from "styled-components";
 
 require('typeface-roboto')
 
+const PageWrapper = styled.div`
+  max-width: 760px;
+  margin: auto;
+  padding: 0 20px;
+  padding-top: 60px;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -41,9 +48,9 @@ const Layout = ({ children }) => (
           </Helmet>
 
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div>
+          <PageWrapper>
             {children}
-          </div>
+          </PageWrapper>
           <Footer/>
         </>
       </ThemeProvider>

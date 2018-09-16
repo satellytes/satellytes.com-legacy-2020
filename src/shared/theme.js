@@ -1,4 +1,9 @@
 const theme = {
+  depth: {
+    orbitLandingpage: 10
+  },
+  navHeight: 60,
+  pagePadding: 20,
   colors: {
     white: '#ffffff',
     dark: '#202840',

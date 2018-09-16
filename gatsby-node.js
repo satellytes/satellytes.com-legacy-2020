@@ -53,7 +53,6 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Create Product pages
       const pageTemplate = path.resolve(`./src/templates/page.js`)
-
       _.each(result.data.allContentfulPage.edges, edge => {
         createPage({
           path: `/page/${edge.node.slug}/`,
