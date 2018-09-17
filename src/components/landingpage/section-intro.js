@@ -1,5 +1,5 @@
 import React from 'react'
-import IntroSVG from './../../assets/intro.svg';
+import IntroSVG from './../../assets/svg/intro.svg';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Orbit from './orbit';

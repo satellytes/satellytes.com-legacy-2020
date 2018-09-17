@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import ContactForm from './contact-form';
+import {ContactForm} from './contact-form';
 import Events from './events';
 
 // import Headline from './headline';
