@@ -13,16 +13,12 @@ class BlogIndex extends React.Component {
     return (
       <Layout light="true">
         <Helmet title={siteTitle} />
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
+          <h1 className="section-headline">Blog</h1>
+          {posts.map(({ node }) => {
+            return (
+              <ArticlePreview  key={node.slug} article={node} />
+            )
+          })}
       </Layout>
     )
   }
@@ -37,16 +33,18 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          createdAt(formatString: "DD.MMM YYYY")
+          updatedAt(formatString: "DD.MMM YYYY")
           description {
             childMarkdownRemark {
               html
             }
           }
           heroImage {
-            fluid(maxWidth: 1280) {
+            fluid(maxWidth: 3000, maxHeight: 1000){
               ...GatsbyContentfulFluid
             }
-            fluidTraced: fluid(maxWidth: 1280)
+            fluidTraced: fluid(maxWidth: 1200, maxHeight: 400)
             {
               ...GatsbyContentfulFluid_tracedSVG
             }

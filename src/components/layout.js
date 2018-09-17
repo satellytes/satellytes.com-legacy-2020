@@ -9,7 +9,7 @@ import Footer from './footer'
 import './layout.css'
 
 import {theme, themeLight} from '../shared/theme';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import styled from "styled-components";
 import GlobalStyles from '../shared/globalStyles';
 
