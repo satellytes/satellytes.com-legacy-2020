@@ -1,4 +1,5 @@
-const theme = {
+export const theme = {
+  background: '#202840',
   depth: {
     orbitLandingpage: 10
   },
@@ -25,6 +26,17 @@ const theme = {
     md: 720,
     lg: 960,
     xl: 1140
+  }
+};
+
+export const themeLight = {
+  ...theme,
+  background: '#ffffff',
+  colors: {
+    white: '#000000',
+    dark: '#5CCFE6',
+    light: '#202840',
+    grey: '#A9A9A9'
   }
 };
 

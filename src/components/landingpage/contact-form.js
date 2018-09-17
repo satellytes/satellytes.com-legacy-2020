@@ -1,4 +1,4 @@
-import {hideVisually, rgba, opacify} from 'polished';
+import {hideVisually, rgba} from 'polished';
 import React from 'react'
 import styled, { css } from 'styled-components';
 // import breakpoint from 'styled-components-breakpoint';

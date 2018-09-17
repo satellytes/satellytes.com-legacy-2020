@@ -2,7 +2,7 @@ import React from 'react'
 
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import ArticlePreview from '../components/article-preview'
+import ArticlePreview from '../components/blog/article-preview'
 import Layout from '../components/layout'
 
 class BlogIndex extends React.Component {
@@ -11,7 +11,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
-      <Layout>
+      <Layout light="true">
         <Helmet title={siteTitle} />
           <h2 className="section-headline">Recent articles</h2>
           <ul className="article-list">
@@ -40,6 +40,15 @@ export const pageQuery = graphql`
           description {
             childMarkdownRemark {
               html
+            }
+          }
+          heroImage {
+            fluid(maxWidth: 1280) {
+              ...GatsbyContentfulFluid
+            }
+            fluidTraced: fluid(maxWidth: 1280)
+            {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
         }

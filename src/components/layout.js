@@ -8,10 +8,10 @@ import Footer from './footer'
 
 import './layout.css'
 
-import theme from '../shared/theme';
-import { ThemeProvider } from 'styled-components';
-import '../shared/globalStyles';
+import {theme, themeLight} from '../shared/theme';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import styled from "styled-components";
+import GlobalStyles from '../shared/globalStyles';
 
 require('typeface-roboto')
 
@@ -22,7 +22,7 @@ const PageWrapper = styled.div`
   padding-top: 60px;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ light = false, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={light ? themeLight : theme}>
         <>
           <Helmet
             title={data.site.siteMetadata.title}
@@ -48,6 +48,8 @@ const Layout = ({ children }) => (
           </Helmet>
 
           <Header siteTitle={data.site.siteMetadata.title} />
+          <GlobalStyles />
+
           <PageWrapper>
             {children}
           </PageWrapper>

@@ -1,10 +1,7 @@
-import { injectGlobal } from "styled-components";
-import theme from './theme';
-
-
 import * as fonts from './fonts';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'Coco Gothic';
@@ -40,9 +37,9 @@ injectGlobal`
 
   body {
     font-family: 'Roboto', sans-serif;
-    background-color: ${theme.colors.dark};
-    color: #fff;
     font-size: 1.5rem;
+    background: ${props => props.theme.background};
+    color:  ${props => props.theme.colors.white};
 
     text-rendering: optimizeLegibility;
     letter-spacing: 0.4px;
@@ -63,3 +60,5 @@ injectGlobal`
     color: inherit;
   }
 `
+
+export default GlobalStyles;
