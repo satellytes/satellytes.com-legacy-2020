@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     letter-spacing: 0.4px;
     line-height: 1.5;
+    margin: 0;
   }
 
   * {

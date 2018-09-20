@@ -6,7 +6,8 @@ const Links = styled.div`
   text-align: center;
 `
 const Layout = styled.footer`
-  padding-bottom: 60px;
+  padding: 80px 0;
+  background-color: ${({theme}) => theme.footer.background}
 `
 const LinkItem = styled(Link)`
   color: #5CCFE6;

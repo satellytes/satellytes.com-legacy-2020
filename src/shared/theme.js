@@ -26,6 +26,14 @@ export const theme = {
     md: 720,
     lg: 960,
     xl: 1140
+  },
+
+  footer: {
+    background: '#202840'
+  },
+
+  navigation: {
+    background: '#202840'
   }
 };
 
@@ -35,8 +43,12 @@ export const themeLight = {
   colors: {
     white: '#000000',
     dark: '#5CCFE6',
-    light: '#202840',
+    light: '#5CCFE6',
     grey: '#A9A9A9'
+  },
+
+  navigation: {
+    background: '#ffffff'
   }
 };
 

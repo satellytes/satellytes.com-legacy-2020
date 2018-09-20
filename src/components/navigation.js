@@ -17,10 +17,9 @@ const NavigationLayout = styled.nav`
   justify-content: flex-start;
 
   ${breakpoint('sm')`
-    background-color: ${({theme}) => theme.colors.dark};
+    background-color: ${({theme}) => theme.navigation.background};
     padding-left: 20px;
     padding-right: 20px;
-    color: #ffffff;
     justify-content: flex-start;
   `}
 
@@ -33,7 +32,8 @@ const NavigationItem = styled(Link).attrs({
   line-height: ${({theme}) => theme.navHeight}px;
   font-size: 1.6rem;
   font-weight: ${({theme}) => theme.fontWeight.normal};
-  color: #fff;
+
+  color: ${({theme}) => theme.colors.white};
 
   &:not(:first-child){
     margin-left: 20px;
