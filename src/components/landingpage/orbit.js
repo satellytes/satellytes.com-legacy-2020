@@ -41,7 +41,7 @@ const Universe = styled.div`
   ${breakpoint('sm')`
     z-index: ${({theme}) => theme.depth.orbitLandingpage};
   `}
-  /* pointer-events: none; */
+  pointer-events: none;
 `
 
 /**

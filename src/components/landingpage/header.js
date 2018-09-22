@@ -7,6 +7,7 @@ const HeaderWrapper = styled.header`
   color: ${ ({theme}) => theme.colors.light};
   font-family: 'Coco Gothic';
   text-align: center;
+  margin-bottom: 60px;
 `;
 
 const Headline = styled.h2`
