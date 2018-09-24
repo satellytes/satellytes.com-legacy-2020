@@ -7,27 +7,17 @@ import {HeadlineContent} from '../shared/headline';
 import Copy from '../shared/copy';
 
 import rehypeReact from "rehype-react"
+import DateInfo from './date-info';
+import Separator from './separator';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: { "p": Copy }
 }).Compiler
 
-const DateGroup = styled.div`
-  color: #aaa;
-`
 
 const Layout = styled.div`
   margin-bottom: 40px;
-`
-
-const Separator = styled.div`
-  margin-top: 20px;
-
-  width: 64px;
-  background-color: ${ ({theme}) => theme.colors.dark};
-  height:1px;
-  border: none;
 `
 
 const Category = styled.span`
@@ -66,13 +56,6 @@ const Header = ({article}) => (
   </HeaderLayout>
 );
 
-const Date = ({article}) =>(
-  <DateGroup>
-    <span>Aktualisiert: {article.updatedAt}</span>, &nbsp;
-    <span>Erstellt: {article.createdAt}</span>
-  </DateGroup>
-);
-
 const DescriptionLayout = styled.div`
   margin-bottom: 20px;
 `
@@ -88,7 +71,7 @@ export default ({ article }) => {
     <TeaserImage article={article}/>
     <Header article={article}/>
     <Description markdown={article.description.childMarkdownRemark}/>
-    <Date article={article}/>
+    <DateInfo article={article}/>
 
     <Separator/>
   </Layout>

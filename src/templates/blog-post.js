@@ -10,6 +10,11 @@ import Copy from '../components/shared/copy';
 import { HeadlineSection, HeadlineParagraph, HeadlineContent } from '../components/shared/headline';
 import Img from "gatsby-image"
 import { Content, Section, Grid, Column } from '../components/layout';
+import DateInfo from '../components/blog/date-info';
+import Separator from '../components/blog/separator';
+
+import styled from 'styled-components';
+import ArticleFooter from '../components/blog/article-footer';
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
@@ -19,8 +24,12 @@ const renderAst = new rehypeReact({
   }
 }).Compiler
 
+const MarkdownContentLayout = styled.div`
+  margin-bottom: 40px;
+`
+
 const MarkdownContent = ({markdown}) => (
-  <div>{renderAst(markdown.htmlAst)}</div>
+  <MarkdownContentLayout>{renderAst(markdown.htmlAst)}</MarkdownContentLayout>
 );
 
 const Header = ({article}) => (
@@ -40,7 +49,6 @@ const HeroImage = ({article}) => (
 class BlogPostTemplate extends React.Component {
   render() {
     const article = get(this.props, 'data.contentfulBlogPost')
-    console.log(article)
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -49,10 +57,15 @@ class BlogPostTemplate extends React.Component {
 
         <article>
           <HeroImage article={article}/>
+
           <Content>
             <Section>
               <Header article={article}/>
               <MarkdownContent markdown={article.body.childMarkdownRemark} />
+              <DateInfo article={article}/>
+              <Separator/>
+              <ArticleFooter article={article}/>
+
             </Section>
           </Content>
 
@@ -69,6 +82,8 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       slug
+      createdAt(formatString: "DD.MMM YYYY")
+      updatedAt(formatString: "DD.MMM YYYY")
       body {
         childMarkdownRemark {
           htmlAst
@@ -77,6 +92,16 @@ export const pageQuery = graphql`
       heroImage {
         fluid(maxWidth: 1180, maxHeight: 480){
           ...GatsbyContentfulFluid
+        }
+      }
+
+      author {
+        name
+        role
+        image {
+          fixed(width: 55, height: 55){
+            ...GatsbyContentfulFixed
+          }
         }
       }
     }
