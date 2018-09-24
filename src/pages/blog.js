@@ -3,7 +3,7 @@ import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import ArticlePreview from '../components/blog/article-preview'
-import Layout from '../components/layout'
+import PageLayout from '../components/page-layout'
 
 class BlogIndex extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
-      <Layout light="true">
+      <PageLayout light="true">
         <Helmet title={siteTitle} />
           <h1 className="section-headline">Blog</h1>
           {posts.map(({ node }) => {
@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
               <ArticlePreview  key={node.slug} article={node} />
             )
           })}
-      </Layout>
+      </PageLayout>
     )
   }
 }

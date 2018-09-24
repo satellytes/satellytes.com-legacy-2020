@@ -1,67 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import styled, {css} from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import Header from './header'
-import Footer from './footer'
+// Content + Section define the basic normal vs. breakout layout
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns:  [full-start] 50px [main-start] 1fr 1fr [main-end] 50px [full-end];
+  grid-gap: 30px;
 
-import './layout.css'
+  & + & {
+    margin-top: 30px;
+  }
 
-import {theme, themeLight} from '../shared/theme';
-import { ThemeProvider } from 'styled-components';
-import styled from "styled-components";
-import GlobalStyles from '../shared/globalStyles';
+  ${breakpoint('sm')`
 
-require('typeface-roboto')
+  `}
+`;
 
-const PageWrapper = styled.div`
-  max-width: 760px;
-  margin: auto;
-  padding: 0 20px;
-  padding-top: 60px;
-`
+export  const Section = styled.div`
+  grid-column: main;
 
-const Layout = ({ light = false, children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={light ? themeLight : theme}>
-        <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
+  ${props => props.breakout ?
+  css`
+      grid-column: full;
+  ` : null
+  }
+`;
 
-          <html lang="en" />
-          </Helmet>
+// Grid + Column can be used to align items in a two column alyout
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+`;
 
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <GlobalStyles />
-
-          <PageWrapper>
-            {children}
-          </PageWrapper>
-          <Footer/>
-        </>
-      </ThemeProvider>
-    )}
-  />
-)
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export const Column = styled.div`
+  grid-column: auto / span 1;
+`;

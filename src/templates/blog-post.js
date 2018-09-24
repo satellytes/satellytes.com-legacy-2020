@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Layout from "../components/layout"
+import PageLayout from "../components/page-layout"
 import { graphql } from "gatsby"
 
 class BlogPostTemplate extends React.Component {
@@ -10,7 +10,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <Layout>
+      <PageLayout>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
             }}
           />
         </div>
-      </Layout>
+      </PageLayout>
     )
   }
 }

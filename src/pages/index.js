@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout'
+import PageLayout from '../components/page-layout'
 import get from 'lodash/get'
 
 import SectionIntro from '../components/landingpage/section-intro';
@@ -13,12 +13,12 @@ class IndexPage extends React.Component {
     const events = get(this, 'props.data.allContentfulEvents.edges')
 
     return (
-      <Layout>
+      <PageLayout>
         <SectionIntro/>
         <SectionWhat/>
         <SectionWhy/>
         <SectionContact events={events}/>
-      </Layout>
+      </PageLayout>
     )
   }
 }
