@@ -18,7 +18,7 @@ export const theme = {
   fontWeight: {
     bold: 600,
     regular: 400,
-    light: 200
+    light: 300
   },
   breakpoints: {
     xs: 0,

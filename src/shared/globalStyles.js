@@ -45,6 +45,9 @@ const GlobalStyles = createGlobalStyle`
     letter-spacing: 0.4px;
     line-height: 1.5;
     margin: 0;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
   * {

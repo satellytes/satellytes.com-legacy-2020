@@ -3,8 +3,8 @@ import Header from './header';
 
 import styled, {css} from 'styled-components';
 
-import Headline from './headline';
-import Copy from './copy';
+import { HeadlineSection } from './../shared/headline';
+import Copy from './../shared/copy';
 import { ListItem, List } from '../list';
 import { Content, Section, Grid, Column } from '../layout';
 import { Clients } from './clients';
@@ -27,7 +27,7 @@ const SectionWhat = ({data}) => (
     </Section>
 
     <Section>
-      <Headline>Full Stack Digital Services</Headline>
+      <HeadlineSection>Full Stack Digital Services</HeadlineSection>
       <Copy>Satellytes ist eine Digital-Agentur, die um große Unternehmen kreist und ihnen bei der Transformation und Optimierung digitaler Services und Interfaces hilft. Wir bieten „Full Stack“ an, also den gesamten Prozess von Ideation bis zur Implementierung des letzten performanten Funnels und der letzten Zeile wunderschönen Codes. Auf gut deutsch:</Copy>
     </Section>
 
@@ -66,18 +66,18 @@ const SectionWhat = ({data}) => (
     </Section>
 
     <Section>
-      <Headline>Das können andere besser</Headline>
+      <HeadlineSection>Das können andere besser</HeadlineSection>
       <Copy>SEM, XR, E-Commerce, Werbung, Marketing, einfache Websites und vieles mehr. Durch unser breites und zuverlässiges Netzwerk an Freelancern und Agenturen finden wir aber für alle Ihre Ansprüche immer eine perfekte Lösung. Beauftragen Sie uns und wir stellen Ihnen vollkommen transparent ein passendes Team zusammen.</Copy>
     </Section>
 
     <Section>
-      <Headline>Unsere Kunden</Headline>
+      <HeadlineSection>Unsere Kunden</HeadlineSection>
       <Copy>Für diese Kunden haben wir in den letzten Jahren größere Projekte realisiert oder sind noch dabei</Copy>
       <Clients />
     </Section>
 
     <Section>
-      <Headline>Und viele weitere</Headline>
+      <HeadlineSection>Und viele weitere</HeadlineSection>
       <Copy>
       Unsere Mitarbeiter haben vor ihrer Karriere bei Satellytes viele Jahre in anderen Agenturen oder als Freelancer gearbeitet. In dieser Zeit wurden Launches, Relaunches oder andere Großprojekte realisiert. Unter anderem für Kunden wie: Mercedes-Benz, Audi, MINI, Coca-Cola, Vitra, Swarovski, Glamour, Montblanc, O2, T-Mobile, Deutsche Post, P&S Reemtsma, Bacardi, Bogner, Siemens, Siemens Mobile, T-Online, Pritt, BMW, Mazda, Constantin Film, Esprit, etc.
       </Copy>
