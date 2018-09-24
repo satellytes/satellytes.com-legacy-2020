@@ -8,8 +8,6 @@ const mobileHeader = 60;
 
 const SectionLayout = styled.div`
   height: calc(100vh - ${mobileHeader}px);
-  margin-left: -20px;
-  margin-right: -20px;
 
   display: flex;
   align-items: flex-start;

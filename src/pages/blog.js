@@ -49,7 +49,7 @@ export const pageQuery = graphql`
           updatedAt(formatString: "DD.MMM YYYY")
           description {
             childMarkdownRemark {
-              htmlAst, html
+              htmlAst
             }
           }
           heroImage {

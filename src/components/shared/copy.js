@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Copy = styled.p`
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: ${ ({theme}) => theme.fontWeight.light };
   margin: 0;
 `

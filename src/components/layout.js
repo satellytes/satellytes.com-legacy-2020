@@ -5,13 +5,18 @@ const mobileGutterSize = `20px`;
 
 // Content + Section define the basic normal vs. breakout layout
 export const Content = styled.div`
+  max-width: 760px;
+  margin: auto;
+  padding: 0 20px;
+  padding-top: 60px;
+
   & + & {
     margin-top: 30px;
   }
 
   ${breakpoint('md')`
     display: grid;
-    grid-template-columns:  [full-start] 50px [main-start] 1fr 1fr [main-end] 50px [full-end];
+    grid-template-columns:  [full-start] 30px [main-start] 1fr 1fr [main-end] 30px [full-end];
     grid-gap: 30px;
   `}
 `;

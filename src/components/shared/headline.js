@@ -5,6 +5,8 @@ export const HeadlineContent = styled.h2`
   font-family: ${ ({theme}) => theme.fontFamily.coco };
   font-weight: ${ ({theme}) => theme.fontWeight.bold };
   font-size: 3.5rem;
+  letter-spacing: -0.2px;
+  line-height: 110%;
 
   ${breakpoint('md')`
     font-size: 4rem;
@@ -16,9 +18,10 @@ export const HeadlineContent = styled.h2`
 
 export const HeadlineSection = styled.h3`
   font-family: ${ ({theme}) => theme.fontFamily.coco };
-  font-weight: ${ ({theme}) => theme.fontWeight.regular };
+  font-weight: ${ ({theme}) => theme.fontWeight.bold };
   font-size: 2.5rem;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
+
 
   ${breakpoint('md')`
     font-size: 3rem;
@@ -30,6 +33,8 @@ export const HeadlineParagraph = styled.h4`
   margin-bottom: 7px;
   font-weight:  ${({ theme }) => theme.fontWeight.bold};
   font-family: ${ ({theme}) => theme.fontFamily.coco };
-  font-size: 1.7rem;
+  font-size: 2rem;
+
+  margin-top: 20px;
 `
 

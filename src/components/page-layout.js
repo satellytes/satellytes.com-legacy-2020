@@ -14,10 +14,16 @@ import GlobalStyles from '../shared/globalStyles';
 require('typeface-roboto')
 
 const PageWrapper = styled.div`
-  max-width: 760px;
-  margin: auto;
-  padding: 0 20px;
-  padding-top: 60px;
+  padding-top: ${ ({theme}) => theme.navHeight }px;
+  flex-grow: 1;
+`
+
+const Page = styled.div`
+  display: flex;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 `
 
 const PageLayout = ({ light = false, children }) => (
@@ -44,14 +50,15 @@ const PageLayout = ({ light = false, children }) => (
 
           <html lang="en" />
           </Helmet>
-
-          <Header siteTitle={data.site.siteMetadata.title} />
           <GlobalStyles />
 
-          <PageWrapper>
-            {children}
-          </PageWrapper>
-          <Footer/>
+          <Page>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <PageWrapper>
+              {children}
+            </PageWrapper>
+            <Footer/>
+          </Page>
         </>
       </ThemeProvider>
     )}

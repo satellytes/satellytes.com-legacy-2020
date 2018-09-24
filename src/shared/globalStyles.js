@@ -50,6 +50,10 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  html, body, #___gatsby, #___gatsby > div {
+    height: 100%;
+  }
+
   * {
     box-sizing: border-box;
   }
