@@ -7,7 +7,8 @@ import PageLayout from '../components/page-layout'
 import { HeadlineContent } from '../components/shared/headline';
 import styled from 'styled-components';
 
-import { Content, Section, Grid, Column } from '../components/layout';
+import { Content, Section} from '../components/layout';
+import { graphql } from 'gatsby';
 const Headline = styled(HeadlineContent)`
   margin-bottom: 40px;
 `
@@ -53,7 +54,7 @@ export const pageQuery = graphql`
             }
           }
           heroImage {
-            fluid(maxWidth: 3000, maxHeight: 1000){
+            fluid(maxWidth: 600, maxHeight: 200){
               ...GatsbyContentfulFluid
             }
             fluidTraced: fluid(maxWidth: 1200, maxHeight: 400)

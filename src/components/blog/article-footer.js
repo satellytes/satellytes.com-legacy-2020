@@ -1,8 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { HeadlineParagraph } from '../shared/headline';
-import Img from "gatsby-image"
-
 import Author from './author';
 
 const ArticleFooter = ({article}) => {

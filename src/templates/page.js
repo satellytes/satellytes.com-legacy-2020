@@ -17,13 +17,17 @@ const Header = ({title}) => (
 )
 
 
-const HeroImage = ({image, alt}) => (
-  <Img
+const HeroImage = ({image, alt}) => {
+  if(!image) { return null }
+
+  return (
+    <Img
       alt={alt}
       key={image.src}
       fluid={image.fluid}
     />
-)
+  )
+};
 
 
 class PageTemplate extends React.Component {

@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import styled from "styled-components";
 import GlobalStyles from '../shared/globalStyles';
 
-require('typeface-roboto')
+import 'typeface-roboto';
 
 const PageWrapper = styled.div`
   padding-top: ${ ({theme}) => theme.navHeight }px;
