@@ -4,37 +4,18 @@ import get from 'lodash/get'
 import PageLayout from "../components/page-layout"
 import { graphql } from "gatsby"
 
-
-import rehypeReact from "rehype-react"
-import Copy from '../components/shared/copy';
-import { HeadlineSection, HeadlineParagraph, HeadlineContent } from '../components/shared/headline';
+import { HeadlineContent } from '../components/shared/headline';
 import Img from "gatsby-image"
-import { Content, Section, Grid, Column } from '../components/layout';
+import { Content, Section} from '../components/layout';
 import DateInfo from '../components/blog/date-info';
 import Separator from '../components/blog/separator';
 
-import styled from 'styled-components';
 import ArticleFooter from '../components/blog/article-footer';
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {
-    "p": Copy,
-    "h1": HeadlineSection,
-    "h2": HeadlineParagraph
-  }
-}).Compiler
-
-const MarkdownContentLayout = styled.div`
-  margin-bottom: 40px;
-`
-
-const MarkdownContent = ({markdown}) => (
-  <MarkdownContentLayout>{renderAst(markdown.htmlAst)}</MarkdownContentLayout>
-);
+import MarkdownContentful from '../components/shared/markdown-contentful';
 
 const Header = ({article}) => (
   <header>
-   <HeadlineContent>{article.title}</HeadlineContent>
+    <HeadlineContent>{article.title}</HeadlineContent>
   </header>
 )
 
@@ -61,7 +42,7 @@ class BlogPostTemplate extends React.Component {
           <Content>
             <Section>
               <Header article={article}/>
-              <MarkdownContent markdown={article.body.childMarkdownRemark} />
+              <MarkdownContentful markdown={article.body.childMarkdownRemark} />
               <DateInfo article={article}/>
               <Separator/>
               <ArticleFooter article={article}/>

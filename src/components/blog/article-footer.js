@@ -6,8 +6,6 @@ import Img from "gatsby-image"
 import Author from './author';
 
 const ArticleFooter = ({article}) => {
-  console.log(article);
-
   return (
     <footer>
       <Author author={article.author}/>
