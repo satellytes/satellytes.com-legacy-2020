@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './header';
 
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 import { HeadlineSection } from './../shared/headline';
 import Copy from './../shared/copy';

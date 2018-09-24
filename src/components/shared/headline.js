@@ -3,7 +3,7 @@ import breakpoint from 'styled-components-breakpoint';
 
 export const HeadlineContent = styled.h2`
   font-family: ${ ({theme}) => theme.fontFamily.coco };
-  font-weight: ${ ({theme}) => theme.fontWeight.regular };
+  font-weight: ${ ({theme}) => theme.fontWeight.bold };
   font-size: 3.5rem;
 
   ${breakpoint('md')`
@@ -25,7 +25,7 @@ export const HeadlineSection = styled.h3`
   `}
 `
 
-const HeadlineParagraph = styled.h4`
+export const HeadlineParagraph = styled.h4`
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 7px;
   font-weight:  ${({ theme }) => theme.fontWeight.bold};

@@ -2,9 +2,16 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+// import breakpoint from 'styled-components-breakpoint';
 import {HeadlineContent} from '../shared/headline';
 import Copy from '../shared/copy';
+
+import rehypeReact from "rehype-react"
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "p": Copy }
+}).Compiler
 
 const DateGroup = styled.div`
   color: #aaa;
@@ -26,26 +33,37 @@ const Separator = styled.div`
 const Category = styled.span`
   font-family: ${ ({theme}) => theme.fontFamily.roboto };
   font-weight: ${ ({theme}) => theme.fontWeight.bold };
+  color: ${ ({theme}) => theme.colors.light};
   font-size: 1.5rem;
 `
 
+const TeaserLayout = styled.div`
+  margin-bottom: 20px;
+`
+
 const TeaserImage = ({article}) => (
-  <Link to={`/blog/${article.slug}`}>
-    <Img
-      alt={article.title}
-      key={article.heroImage.src}
-      fluid={article.heroImage.fluid}
-    />
-  </Link>
+  <TeaserLayout>
+    <Link to={`/blog/${article.slug}`}>
+      <Img
+        alt={article.title}
+        key={article.heroImage.src}
+        fluid={article.heroImage.fluid}
+      />
+    </Link>
+  </TeaserLayout>
 );
 
+const HeaderLayout = styled.header`
+  margin-bottom: 20px;
+`
+
 const Header = ({article}) => (
-  <header>
+  <HeaderLayout>
     <Category>UX/UI</Category>
     <HeadlineContent>
       <Link to={`/blog/${article.slug}`}>{article.title}</Link>
     </HeadlineContent>
-  </header>
+  </HeaderLayout>
 );
 
 const Date = ({article}) =>(
@@ -55,13 +73,13 @@ const Date = ({article}) =>(
   </DateGroup>
 );
 
-const Description = ({htmlText}) => (
-  <Copy
-    dangerouslySetInnerHTML={{
-      __html: htmlText,
-    }}
-  />
-);
+const DescriptionLayout = styled.div`
+  margin-bottom: 20px;
+`
+const Description = ({markdown}) => {
+  return (<DescriptionLayout>{renderAst(markdown.htmlAst)}</DescriptionLayout>)
+};
+
 
 export default ({ article }) => {
 
@@ -69,7 +87,7 @@ export default ({ article }) => {
   <Layout>
     <TeaserImage article={article}/>
     <Header article={article}/>
-    <Description htmlText={article.description.childMarkdownRemark.html}/>
+    <Description markdown={article.description.childMarkdownRemark}/>
     <Date article={article}/>
 
     <Separator/>

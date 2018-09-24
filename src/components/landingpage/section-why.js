@@ -4,7 +4,7 @@ import Header from './header';
 
 import { HeadlineSection } from '../shared/headline';
 import Copy from './../shared/copy';
-import { Content, Section, Grid, Column } from '../layout';
+import { Content, Section } from '../layout';
 
 const SectionWhy = () => (
   <Content>

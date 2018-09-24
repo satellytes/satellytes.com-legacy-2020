@@ -1,23 +1,24 @@
 import styled, {css} from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
+const mobileGutterSize = `20px`;
+
 // Content + Section define the basic normal vs. breakout layout
 export const Content = styled.div`
-  display: grid;
-  grid-template-columns:  [full-start] 50px [main-start] 1fr 1fr [main-end] 50px [full-end];
-  grid-gap: 30px;
-
   & + & {
     margin-top: 30px;
   }
 
-  ${breakpoint('sm')`
-
+  ${breakpoint('md')`
+    display: grid;
+    grid-template-columns:  [full-start] 50px [main-start] 1fr 1fr [main-end] 50px [full-end];
+    grid-gap: 30px;
   `}
 `;
 
 export  const Section = styled.div`
   grid-column: main;
+  margin-bottom: 20px;
 
   ${props => props.breakout ?
   css`
@@ -30,9 +31,19 @@ export  const Section = styled.div`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: ${mobileGutterSize} 0px;
+
+  ${breakpoint('md')`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  `}
 `;
 
 export const Column = styled.div`
-  grid-column: auto / span 1;
+  grid-column: span 2;
+
+  ${breakpoint('md')`
+    grid-column: auto / span 1;
+  `}
 `;

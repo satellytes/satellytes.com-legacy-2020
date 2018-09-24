@@ -16,6 +16,7 @@ require('typeface-roboto')
 const PageWrapper = styled.div`
   max-width: 760px;
   margin: auto;
+  padding: 0 20px;
   padding-top: 60px;
 `
 

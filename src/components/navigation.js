@@ -30,8 +30,9 @@ const NavigationItem = styled(Link).attrs({
 })`
   text-decoration: none;
   line-height: ${({theme}) => theme.navHeight}px;
+  font-family: ${({theme}) => theme.fontFamily.roboto};
+  font-weight: ${({theme}) => theme.fontWeight.bold};
   font-size: 1.6rem;
-  font-weight: ${({theme}) => theme.fontWeight.normal};
 
   color: ${({theme}) => theme.colors.white};
 

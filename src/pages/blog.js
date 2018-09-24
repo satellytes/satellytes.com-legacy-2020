@@ -4,7 +4,13 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import ArticlePreview from '../components/blog/article-preview'
 import PageLayout from '../components/page-layout'
+import { HeadlineContent } from '../components/shared/headline';
+import styled from 'styled-components';
 
+import { Content, Section, Grid, Column } from '../components/layout';
+const Headline = styled(HeadlineContent)`
+  margin-bottom: 40px;
+`
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -13,12 +19,18 @@ class BlogIndex extends React.Component {
     return (
       <PageLayout light="true">
         <Helmet title={siteTitle} />
-          <h1 className="section-headline">Blog</h1>
-          {posts.map(({ node }) => {
-            return (
-              <ArticlePreview  key={node.slug} article={node} />
-            )
-          })}
+        <Content>
+          <Section>
+            <Headline>Blog</Headline>
+
+            {posts.map(({ node }) => {
+              return (
+                <ArticlePreview  key={node.slug} article={node} />
+              )
+            })}
+          </Section>
+        </Content>
+
       </PageLayout>
     )
   }
@@ -37,7 +49,7 @@ export const pageQuery = graphql`
           updatedAt(formatString: "DD.MMM YYYY")
           description {
             childMarkdownRemark {
-              html
+              htmlAst, html
             }
           }
           heroImage {

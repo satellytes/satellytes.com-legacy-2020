@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
-import breakpoint from 'styled-components-breakpoint';
+// import breakpoint from 'styled-components-breakpoint';
 import Img from "gatsby-image";
 
 export const Clients = () => (

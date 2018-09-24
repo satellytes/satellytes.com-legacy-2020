@@ -6,8 +6,11 @@ import breakpoint from 'styled-components-breakpoint';
 const HeaderWrapper = styled.header`
   color: ${ ({theme}) => theme.colors.light};
   font-family: 'Coco Gothic';
-  text-align: center;
   margin-bottom: 60px;
+
+  ${breakpoint('md')`
+    text-align: center;
+  `}
 `;
 
 const Headline = styled.h2`
