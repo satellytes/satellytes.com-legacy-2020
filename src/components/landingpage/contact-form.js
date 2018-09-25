@@ -6,6 +6,23 @@ import Button from '../button';
 
 import PersonIcon from "./../../images/icon-person.png";
 import MailIcon from "./../../images/icon-mail.png";
+import { Formik, Form, Field } from 'formik';
+
+import * as Yup from "yup";
+
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Required'),
+  message: Yup.string()
+    .min(2, 'Too Short!')
+    .max(500, 'Too Long!')
+    .required('Required'),
+});
 
 const Formfield = styled.div`
   position: relative;
@@ -13,6 +30,11 @@ const Formfield = styled.div`
   background-color: ${rgba("#000000", 0.2)};
   border-radius: 5px;
   color: white;
+
+  ${({error}) => error ? css`
+    border: 1px solid  ${({theme}) => theme.colors.error};
+    color: ${({theme}) => theme.colors.error};
+  ` : null }
 `;
 
 const IconWrapper = styled.div`
@@ -47,6 +69,7 @@ const textInput = css`
   font-size: 1.5rem;
   border-radius: 5px;
   transition: box-shadow .2s ease;
+  font-family: ${ ({theme}) => theme.fontFamily.roboto };
 
   &:focus {
     box-shadow: 0 0 0 2px ${ ({theme}) => theme.colors.light };
@@ -71,10 +94,10 @@ const textInput = css`
   }
 `
 
-const Input = styled.input`
+const Input = styled(Field)`
   ${textInput}
 `
-const Textarea = styled.textarea`
+const Textarea = styled(Field).attrs({component: 'textarea'})`
   ${textInput}
   height: 150px;
   padding-top: 12px;
@@ -83,6 +106,7 @@ const Textarea = styled.textarea`
 const HoneyPot = styled.div`
   ${hideVisually()};
 `
+
 const FormGroup = styled.div`
   & + & {
     margin-top: 20px;
@@ -90,38 +114,95 @@ const FormGroup = styled.div`
 `;
 
 
-const Textfield = ({icon, children}) => (
-  <Formfield>
-    {children}
-    <Icon src={icon}/>
-  </Formfield>
+const ErrorMessage = styled.div`
+  color: ${ ({theme}) => theme.colors.error };
+`
+const Textfield = ({icon, children, hasError, errorMessage}) => (
+  <div>
+    <Formfield error={hasError}>
+      {children}
+      { icon ? <Icon src={icon}/> : null }
+    </Formfield>
+    {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null }
+  </div>
 )
 
+const FormLayout = styled.div`
+  margin-top: 20px;
+`
 
+export class ContactForm extends React.Component {
+  constructor() {
+    super();
 
-export const ContactForm = () => (
-  <form data-netlify-honeypot="non-human-field" data-netlify="true">
-    <HoneyPot/>
-    <FormGroup>
-      <Textfield icon={PersonIcon}>
-        <Input type="text" aria-label="Name" placeholder="Name" name="name" required />
-      </Textfield>
-    </FormGroup>
+    this.state = {
+      name: '',
+      email: '',
+      message: ''
+    }
 
-    <FormGroup>
-      <Textfield icon={MailIcon}>
-        <Input type="text" aria-label="E-Mail" placeholder="E-Mail" name="email" required />
-      </Textfield>
-    </FormGroup>
+    this.handleChange = this.handleChange.bind(this);
+    this.submit = this.submit.bind(this);
+    this.validate = this.validate.bind(this);
+  }
 
-    <FormGroup>
-      <Formfield>
-        <Textarea type="text" aria-label="Nachricht" placeholder="Nachricht" name="message" required />
-      </Formfield>
-    </FormGroup>
+  submit(values, { setSubmitting }){
+      setTimeout(() => {
+        console.log(JSON.stringify(values, null, 2));
+        setSubmitting(false);
+    }, 400);
+  }
 
-    <FormGroup>
-      <Button>Senden</Button>
-    </FormGroup>
-  </form>
-)
+  handleChange = field => event => {
+    console.log('field', field,  { [field]: event.target.value})
+    this.setState({ [field]: event.target.value});
+  }
+
+  validate(values) {
+    console.log('validate');
+
+    let errors = {};
+    errors.name = 'not good';
+    return errors;
+  }
+
+  render() {
+
+    return (
+      <FormLayout>
+        <Formik
+          validationSchema={SignupSchema}
+          onSubmit={this.submit}
+        >
+          {({ errors, touched, isSubmitting }) => (
+            <Form data-netlify-honeypot="non-human-field" data-netlify="true" >
+              <HoneyPot/>
+
+              <FormGroup>
+                <Textfield icon={PersonIcon} hasError={errors.name && touched.name} errorMessage={errors.name}>
+                  <Input name="name" />
+                </Textfield>
+              </FormGroup>
+
+              <FormGroup >
+                <Textfield icon={MailIcon} hasError={errors.email && touched.email} errorMessage={errors.email}>
+                  <Input name="email"/>
+                </Textfield>
+              </FormGroup>
+
+              <FormGroup>
+                <Textfield hasError={errors.message && touched.message} errorMessage={errors.message} >
+                  <Textarea name="message"/>
+                </Textfield>
+              </FormGroup>
+
+              <FormGroup>
+                <Button type='submit' disabled={isSubmitting} >Senden</Button>
+              </FormGroup>
+            </Form>
+          )}
+        </Formik>
+    </FormLayout>
+    )
+  }
+}

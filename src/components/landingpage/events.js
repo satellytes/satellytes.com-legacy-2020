@@ -95,7 +95,7 @@ const Events = ({events}) => {
             const event = node;
 
             return (
-              <EventItem event={event} />
+              <EventItem key={event.id} event={event} />
             )
           })}
       </Layout>
