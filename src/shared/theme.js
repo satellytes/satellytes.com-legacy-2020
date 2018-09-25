@@ -16,9 +16,10 @@ export const theme = {
     roboto: 'Roboto'
   },
   fontWeight: {
+    extraBold: 800,
     bold: 600,
     regular: 400,
-    light: 300
+    light: 300,
   },
   breakpoints: {
     xs: 0,
