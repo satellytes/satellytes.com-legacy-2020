@@ -73,6 +73,9 @@ const SectionWhat = ({data}) => (
     <Section>
       <HeadlineSection>Unsere Kunden</HeadlineSection>
       <Copy>Für diese Kunden haben wir in den letzten Jahren größere Projekte realisiert oder sind noch dabei</Copy>
+    </Section>
+
+    <Section>
       <Clients />
     </Section>
 
