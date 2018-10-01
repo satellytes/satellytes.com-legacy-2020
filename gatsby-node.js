@@ -65,6 +65,12 @@ exports.createPages = ({ graphql, actions }) => {
 
     })
     .then(() => {
+       // disable blog if not activated by the environemnt
+       if(!process.env.BLOG_ENABLED) {
+        resolve();
+        return;
+      }
+
       graphql(QUERY_BLOG).then(result => {
         if (result.errors) {
           reject(result.errors)
@@ -84,5 +90,21 @@ exports.createPages = ({ graphql, actions }) => {
         resolve();
       })
     })
+  })
+}
+
+
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  return new Promise(resolve => {
+    // disable blog if not activated by the environemnt
+    console.log('process.env.BLOG_ENABLED', process.env.BLOG_ENABLED)
+    if(page.path === '/blog/' && !process.env.BLOG_ENABLED) {
+      deletePage(page)
+    }
+
+    resolve()
   })
 }
