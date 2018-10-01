@@ -17,7 +17,6 @@ export const Clients = () => (
       }
     `}
     render={data => {
-      console.log(data)
       return (
       <div>
         <Img
