@@ -23,6 +23,8 @@ const SectionLayout = styled.div`
 const SatellytesSVGLogo = styled.svg`
   display: block;
   width: 100%;
+  max-width: 760px;
+
   fill: ${ ({theme}) => theme.fontWeight.dark };
   z-index: 100;
   animation: 3s cubic-bezier(0.5, 0.1, 0.37, 1) scale-in-logo forwards;
@@ -33,6 +35,7 @@ const SatellytesSVGLogo = styled.svg`
   `}
 `
 
+
 class SectionIntro extends React.Component {
 
   render() {
@@ -41,8 +44,9 @@ class SectionIntro extends React.Component {
       <SectionLayout>
         <Orbit/>
         <SatellytesSVGLogo
-          preserveAspectRatio="xMidYMid slice"
-          viewBox="0 0 200 200">{IntroSVG()}</SatellytesSVGLogo>
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 200 200">{IntroSVG()}</SatellytesSVGLogo>
+
       </SectionLayout>
     )
   }
