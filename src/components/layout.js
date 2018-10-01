@@ -1,4 +1,6 @@
-import styled, {css} from 'styled-components';
+import React from 'react'
+import Waypoint from 'react-waypoint';
+import styled, { css, keyframes} from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
 const mobileGutterSize = `20px`;
@@ -21,9 +23,29 @@ export const Content = styled.div`
   `}
 `;
 
-export  const Section = styled.div`
+
+
+const makeVisibleAnimation = keyframes`
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
+
+
+
+export const SectionLayout = styled.div.attrs({
+  className: p => p.show ? 'is-showing' : '',
+})`
   grid-column: main;
   margin-bottom: 20px;
+
+  transition: transform .3s ease, opacity .3s ease;
+  transform: translateY(15px);
+  opacity: 0.7;
+  &.is-showing {
+    animation: 0.7s ${makeVisibleAnimation} forwards;
+  }
 
   ${props => props.breakout ?
   css`
@@ -31,6 +53,46 @@ export  const Section = styled.div`
   ` : null
   }
 `;
+
+class Test extends React.Component {
+  render() {
+    return (
+      <SectionLayout
+        ref={this.props.innerRef}
+        show={this.props.show}>
+        {this.props.children}
+      </SectionLayout>
+    )
+  }
+}
+export class Section extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: false
+    }
+  }
+  _handleWaypointEnter() {
+    this.setState({
+      visible: true
+    });
+  }
+
+  render() {
+
+    return (
+      <Waypoint onEnter={() => this._handleWaypointEnter()}>
+        <Test show={this.state.visible}>
+        {this.props.children}
+        </Test>
+      </Waypoint>
+
+    )
+  }
+
+}
 
 // Grid + Column can be used to align items in a two column alyout
 export const Grid = styled.div`
