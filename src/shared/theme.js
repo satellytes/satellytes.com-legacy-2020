@@ -35,7 +35,8 @@ export const theme = {
   },
 
   navigation: {
-    background: '#202840'
+    background: '#202840',
+    foreground: '#ffffff'
   }
 };
 
@@ -50,7 +51,8 @@ export const themeLight = {
   },
 
   navigation: {
-    background: '#ffffff'
+    background: '#ffffff',
+    foreground: '#202840'
   }
 };
 
