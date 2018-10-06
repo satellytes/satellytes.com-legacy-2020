@@ -82,7 +82,7 @@ export class ContactForm extends React.Component {
     this.setState({
       completed: false
     })
-    fetch("/", {
+    fetch("/?no-cache=1", { ///?no-cache=1 to prevent SW caching
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -147,7 +147,9 @@ export class ContactForm extends React.Component {
             const disabled = isSubmitting || this.state.completed;
 
             return (
-            <Form data-netlify-honeypot="non-human-field" data-netlify="true" >
+            <Form data-netlify-honeypot="non-human-field" data-netlify="true"  name="sy-contact-form"  >
+              <input type="hidden" name="form-name" value="sy-contact-form" />
+
               <HoneyPotField name='non-human-field'/>
 
               <FormGroup>
