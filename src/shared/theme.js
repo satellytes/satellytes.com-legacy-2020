@@ -10,7 +10,8 @@ export const theme = {
     dark: '#202840',
     light: '#5CCFE6',
     grey: '#A9A9A9',
-    error: '#FF9999'
+    error: '#FF9999',
+    progress: '#5CE6A1'
   },
   fontFamily: {
     coco: 'Coco Gothic',

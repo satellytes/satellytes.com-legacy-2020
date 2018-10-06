@@ -11,6 +11,7 @@ import * as Yup from "yup";
 import SubmitButton from './submit-button';
 import Formfield from './formfield';
 import {Input, Textarea} from './input';
+import { Persist } from 'formik-persist';
 
 function delayPromise(duration) {
   return function(...args){
@@ -57,6 +58,11 @@ const FormLayout = styled.div`
   margin-top: 20px;
 `
 
+
+const ErrorMessage = styled.div`
+  color: ${ ({theme}) => theme.colors.error };
+`
+
 export class ContactForm extends React.Component {
   constructor() {
     super();
@@ -64,7 +70,8 @@ export class ContactForm extends React.Component {
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      completed: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -76,37 +83,56 @@ export class ContactForm extends React.Component {
 
     setSubmitting(true);
 
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({
-    //     "form-name": "sy-contact-form",
-    //     ...values
-    //   })
-    // })
-    Promise.resolve(true)
-    .then(delayPromise(3000))
-    .then(() => {
-      this.onSubmitSuccess()
-    })
-    .catch(this.onSubmitError)
-    .finally(() => {
-      setSubmitting(false)
-    })
-  }
-  onSubmitSuccess = response => {
-    console.log('onSubmitSuccess')
     this.setState({
-      submitting: false,
-      success: true
+      completed: false
     })
-    this.setState({success: true})
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "sy-contact-form",
+        ...values
+      })
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        throw Error(response.statusText)
+      }
+    })
+    .then(() => this.onSubmitSuccess(setSubmitting))
+    .catch(() => this.onSubmitError(setSubmitting, setSubmitting))
   }
 
-  onSubmitError = error => {
-    console.log('onSubmitError')
+  reset() {
+    setTimeout(() => {
+      this.setState({
+        completed: false
+      })
+    }, 2000)
+  }
+
+  onSubmitSuccess = (setSubmitting) => {
+    console.log('onSubmitSuccess')
+
+
+    setSubmitting(false);
     this.setState({
-      submitting: false,
+      completed: true,
+      success: true
+    })
+
+    window.localStorage.setItem('contact-form', null);
+
+    // this.reset();
+  }
+
+  onSubmitError = (error, setSubmitting) => {
+    setSubmitting(false);
+
+    this.setState({
+      completed: false,
       error: true
     })
 
@@ -124,10 +150,13 @@ export class ContactForm extends React.Component {
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           validateOnBlur={true}
-          // validationSchema={SignupSchema}
+          validationSchema={SignupSchema}
           onSubmit={this.submit}
         >
-          {({ errors, touched, isSubmitting }) => (
+          {({ errors, touched, isSubmitting }) => {
+            const disabled = isSubmitting || this.state.completed;
+
+            return (
             <Form data-netlify-honeypot="non-human-field" data-netlify="true" >
               <HoneyPot/>
 
@@ -135,7 +164,7 @@ export class ContactForm extends React.Component {
                 <Formfield
                   id="name" icon={PersonIcon} label='Name'
                   hasError={errors.name && touched.name} errorMessage={errors.name}>
-                  <Input id="name" name="name" placeholder="Name" />
+                  <Input id="name" name="name" disabled={disabled} />
                 </Formfield>
               </FormGroup>
 
@@ -143,7 +172,7 @@ export class ContactForm extends React.Component {
                 <Formfield
                   icon={MailIcon} id='email' label='E-Mail'
                   hasError={errors.email && touched.email} errorMessage={errors.email}>
-                  <Input id='email' name="email" placeholder="E-Mail"/>
+                  <Input id='email' name="email" disabled={disabled} />
                 </Formfield>
               </FormGroup>
 
@@ -151,16 +180,29 @@ export class ContactForm extends React.Component {
                 <Formfield
                   id='message' label='Ihre Nachricht'
                   hasError={errors.message && touched.message} errorMessage={errors.message} >
-                  <Textarea id='message' name="message"  placeholder="Nachricht"/>
+                  <Textarea id='message' name="message" disabled={disabled} />
                 </Formfield>
               </FormGroup>
 
               <FormGroup>
-                <Button type='submit' disabled={isSubmitting} >Senden</Button>
-                <SubmitButton isSubmitting={isSubmitting}>Senden</SubmitButton>
+                {
+                  this.state.error ? (
+                    <ErrorMessage>Irgendwas ist schief gelaufen, versuchs nochmal oder sende uns stattdessen eine E-Mail.</ErrorMessage>
+                  ) : null
+                }
+                <SubmitButton
+                  disabled={disabled}
+                  progressLabel='Sende...'
+                  completeLabel='Gesendet'
+                  completed={this.state.completed && this.state.error !== false}
+                  sending={isSubmitting}>Senden {isSubmitting}</SubmitButton>
               </FormGroup>
+              {
+                this.state.completed ? null : (<Persist name="contact-form" />)
+              }
+
             </Form>
-          )}
+          )}}
         </Formik>
     </FormLayout>
     )

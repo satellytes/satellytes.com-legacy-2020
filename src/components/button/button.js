@@ -14,11 +14,11 @@ const Button = styled.button`
 
   transition: background-color .2s ease;
   background-color: ${ ({theme}) => theme.colors.light };
-  cursor: pointer;
   overflow: hidden;
   position: relative;
   text-align: left;
 
+  padding-left: 15px;
   &:hover, &:active, &:focus {
     background-color: #80EAFF;
   }

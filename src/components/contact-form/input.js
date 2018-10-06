@@ -18,14 +18,6 @@ font-family: ${ ({theme}) => theme.fontFamily.roboto };
   outline: none;
 }
 
-&::placeholder {
-  color: ${ ({theme}) => theme.colors.light };
-}
-
-&.has-error::placeholder {
-  color: ${ ({theme}) => theme.colors.error };
-}
-
 &.has-error {
   box-shadow: 0 0 0 1px ${ ({theme}) => theme.colors.error };
 }
