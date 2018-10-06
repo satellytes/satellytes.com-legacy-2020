@@ -1,17 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import PageLayout from "../components/page-layout"
+import PageLayout from "../components/layout/page-layout"
 import { graphql } from "gatsby"
 
-import { HeadlineContent } from '../components/shared/headline';
+import { HeadlineContent } from '../components/typography/headline';
 import Img from "gatsby-image"
-import { Content, Section} from '../components/layout';
+import { Content, Section} from '../components/layout/layout';
 import DateInfo from '../components/blog/date-info';
 import Separator from '../components/blog/separator';
 
 import ArticleFooter from '../components/blog/article-footer';
-import MarkdownContentful from '../components/shared/markdown-contentful';
+import MarkdownContentful from '../components/typography/markdown-contentful';
 
 const Header = ({article}) => (
   <header>

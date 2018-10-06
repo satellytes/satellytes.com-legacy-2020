@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { rgba } from 'polished'
 import Navigation from './navigation';
 
-
 const Layout = styled.header`
   position: fixed;
   top: 0;
@@ -13,7 +12,6 @@ const Layout = styled.header`
   font-family: 'Coco Gothic';
   height: ${({theme}) => theme.navHeight}px;
 `
-
 
 const Border = styled.hr`
   position: absolute;

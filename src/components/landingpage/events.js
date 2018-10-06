@@ -2,7 +2,6 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-
 const EventBox = styled.div`
   width: 5rem;
   height: 5rem;
@@ -20,7 +19,6 @@ const EventBox = styled.div`
     background-color: ${ theme.colors.grey }
   `}
 `
-
 
 const isFromPast = date => {
   return new Date(date).getTime() < +new Date().getTime();

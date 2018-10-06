@@ -3,11 +3,11 @@ import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import ArticlePreview from '../components/blog/article-preview'
-import PageLayout from '../components/page-layout'
-import { HeadlineContent } from '../components/shared/headline';
+import PageLayout from '../components/layout/page-layout'
+import { HeadlineContent } from '../components/typography/headline';
 import styled from 'styled-components';
 
-import { Content, Section} from '../components/layout';
+import { Content, Section} from '../components/layout/layout';
 import { graphql } from 'gatsby';
 const Headline = styled(HeadlineContent)`
   margin-bottom: 40px;

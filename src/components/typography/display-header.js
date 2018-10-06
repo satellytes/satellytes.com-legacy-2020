@@ -32,11 +32,11 @@ const Tagline = styled.span`
   `}
 `
 
-const Header = ({headline, tagline}) => (
+const DisplayHeader = ({headline, tagline}) => (
   <HeaderWrapper>
     <Headline>{headline}</Headline>
     <Tagline>{tagline}</Tagline>
   </HeaderWrapper>
 )
 
-export default Header
+export default DisplayHeader

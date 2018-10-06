@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
-import Footer from './footer'
+import Header from '../header/header'
+import Footer from '../footer/footer'
 
-import {theme, themeLight} from '../shared/theme';
+import {theme, themeLight} from '../../shared/theme';
 import { ThemeProvider } from 'styled-components';
 import styled from "styled-components";
-import GlobalStyles from '../shared/globalStyles';
+import GlobalStyles from '../../shared/globalStyles';
 
 import 'typeface-roboto';
 

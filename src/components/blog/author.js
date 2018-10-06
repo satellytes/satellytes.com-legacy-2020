@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HeadlineParagraph } from '../shared/headline';
+import { HeadlineParagraph } from '../typography/headline';
 import Img from "gatsby-image"
 
 const ImageRound = styled(Img)`

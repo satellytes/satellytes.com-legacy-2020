@@ -1,9 +1,9 @@
 import React from 'react'
-import {ContactForm} from './contact-form';
+import {ContactForm} from './../contact-form/contact-form';
 import Events from './events';
-import { Content, Section, Grid, Column } from '../layout';
-import Copy from '../shared/copy';
-import { HeadlineContent } from '../shared/headline';
+import { Content, Section, Grid, Column } from '../layout/layout';
+import Copy from '../typography/copy';
+import { HeadlineContent } from '../typography/headline';
 
 const SectionContact = ({events}) => (
   <Content>

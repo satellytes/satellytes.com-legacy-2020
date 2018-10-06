@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from './header';
+import DisplayHeader from '../typography/display-header';
 
 import styled from 'styled-components';
 
-import { HeadlineSection } from './../shared/headline';
-import Copy from './../shared/copy';
+import { HeadlineSection } from '../typography/headline';
+import Copy from '../typography/copy';
 import { ListItem, List } from '../list';
-import { Content, Section, Grid, Column } from '../layout';
+import { Content, Section, Grid, Column } from '../layout/layout';
 import { Clients } from './clients';
 
 
@@ -21,7 +21,7 @@ const HeadlineService = styled.h4`
 const SectionWhat = ({data}) => (
   <Content>
     <Section breakout>
-      <Header
+      <DisplayHeader
         headline='Angebot'
         tagline='Wir bieten nur an, was wir par excellence können.'/>
     </Section>

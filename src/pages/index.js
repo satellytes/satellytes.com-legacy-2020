@@ -1,5 +1,5 @@
 import React from 'react'
-import PageLayout from '../components/page-layout'
+import PageLayout from '../components/layout/page-layout'
 import get from 'lodash/get'
 
 import SectionIntro from '../components/landingpage/section-intro';

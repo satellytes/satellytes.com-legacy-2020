@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import styled from 'styled-components';
 // import breakpoint from 'styled-components-breakpoint';
-import {HeadlineContent} from '../shared/headline';
-import Copy from '../shared/copy';
+import {HeadlineContent} from '../typography/headline';
+import Copy from '../typography/copy';
 
 import rehypeReact from "rehype-react"
 import DateInfo from './date-info';

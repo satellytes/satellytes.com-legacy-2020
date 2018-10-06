@@ -1,15 +1,13 @@
 import React from 'react'
-import Header from './header';
-// import styled from 'styled-components';
-
-import { HeadlineSection } from '../shared/headline';
-import Copy from './../shared/copy';
-import { Content, Section } from '../layout';
+import DisplayHeader from '../typography/display-header';
+import { HeadlineSection } from '../typography/headline';
+import Copy from '../typography/copy';
+import { Content, Section } from '../layout/layout';
 
 const SectionWhy = () => (
   <Content>
     <Section breakout>
-      <Header
+      <DisplayHeader
         headline='Versprechen'
         tagline='Wir sind auf Ihrer Seite. Und auf der des Nutzers.'/>
     </Section>

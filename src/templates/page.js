@@ -1,12 +1,12 @@
 import React from "react"
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import PageLayout from "../components/page-layout"
+import PageLayout from "../components/layout/page-layout"
 import { graphql } from "gatsby"
 
-import { Content, Section} from '../components/layout';
-import MarkdownContentful from '../components/shared/markdown-contentful';
-import { HeadlineContent } from "../components/shared/headline";
+import { Content, Section} from '../components/layout/layout';
+import MarkdownContentful from '../components/typography/markdown-contentful';
+import { HeadlineContent } from "../components/typography/headline";
 import DateInfo from "../components/blog/date-info";
 import Img from "gatsby-image"
 

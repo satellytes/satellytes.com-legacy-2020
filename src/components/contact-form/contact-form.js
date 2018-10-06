@@ -1,14 +1,16 @@
 import {hideVisually, rgba} from 'polished';
 import React from 'react'
 import styled, { css } from 'styled-components';
-// import breakpoint from 'styled-components-breakpoint';
-import Button from '../button';
+import Button from '../button/button';
 
 import PersonIcon from "./../../images/icon-person.png";
 import MailIcon from "./../../images/icon-mail.png";
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 
 import * as Yup from "yup";
+import SubmitButton from './submit-button';
+import Formfield from './formfield';
+import {Input, Textarea} from './input';
 
 function delayPromise(duration) {
   return function(...args){
@@ -39,71 +41,7 @@ const SignupSchema = Yup.object().shape({
     .max(5000, 'Die Nachricht ist zu lang.')
     .required('Die Nachricht fehlt, du willst uns doch eine schicken oder?'),
 });
-const IconWrapper = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 50px;
-  right: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .2s ease-out;
 
-  img {
-    width: 22px;
-  }
-`;
-
-const Icon = ({src}) => (
-  <IconWrapper>
-    <img src={src} alt="person-icon"/>
-  </IconWrapper>
-)
-
-const textInput = css`
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  color: inherit;
-  padding: 10px 18px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  transition: box-shadow .2s ease;
-  font-family: ${ ({theme}) => theme.fontFamily.roboto };
-
-  &:focus {
-    box-shadow: 0 0 0 2px ${ ({theme}) => theme.colors.light };
-    outline: none;
-  }
-
-  &::placeholder {
-    color: ${ ({theme}) => theme.colors.light };
-  }
-
-  &.has-error::placeholder {
-    color: ${ ({theme}) => theme.colors.error };
-  }
-
-  &.has-error {
-    box-shadow: 0 0 0 1px ${ ({theme}) => theme.colors.error };
-  }
-
-  &[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-`
-
-const Input = styled(Field)`
-  ${textInput}
-`
-const Textarea = styled(Field).attrs({component: 'textarea'})`
-  ${textInput}
-  height: 150px;
-  padding-top: 12px;
-`
 
 const HoneyPot = styled.div`
   ${hideVisually()};
@@ -115,85 +53,9 @@ const FormGroup = styled.div`
   }
 `;
 
-const ErrorMessage = styled.div`
-  color: ${ ({theme}) => theme.colors.error };
-`
-
-const InputWrapper = styled.div`
-  position: relative;
-  align-items: center;
-  background-color: ${rgba("#000000", 0.2)};
-  border-radius: 5px;
-  color: white;
-
-  ${({error}) => error ? css`
-    border: 1px solid  ${({theme}) => theme.colors.error};
-    color: ${({theme}) => theme.colors.error};
-  ` : null }
-`;
-
-
-const Formfield = ({id, label, icon, children, hasError, errorMessage}) => (
-  <div>
-    <label htmlFor={id}>{label}</label>
-    <InputWrapper error={hasError}>
-      {children}
-      { icon ? <Icon src={icon}/> : null }
-    </InputWrapper>
-    {hasError ? <ErrorMessage>{errorMessage}</ErrorMessage> : null }
-  </div>
-)
-
 const FormLayout = styled.div`
   margin-top: 20px;
 `
-
-const SubmitButtonLayout = styled.div`
-  position: relative;
-  padding-left: 18px;
-  text-align: left;
-
-  ${ ({isSubmitting}) => isSubmitting ? css`
-    background-color: red;
-  ` : ''};
-
-  &[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-
-  &.reset::after {
-    transition: none;
-    transform: translateX(-100%);
-  }
-
-  :before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  &:before {
-    background-color: ${({theme}) => theme.colors.light};
-    z-index: -2;
-    transition: background-color .2s ease;
-  }
-
-  &:after {
-    background-color: #B3F2FF;
-    transform: translateX(-100%);
-    transition: transform .3s ease;
-    z-index: -1;
-  }
-`
-
-const SubmitButton = (props) => (
-  <SubmitButtonLayout {...props}>{props.children}</SubmitButtonLayout>
-);
 
 export class ContactForm extends React.Component {
   constructor() {
