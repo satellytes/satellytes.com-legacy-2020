@@ -1,27 +1,18 @@
-import {hideVisually, rgba} from 'polished';
+import {hideVisually} from 'polished';
 import React from 'react'
-import styled, { css } from 'styled-components';
-import Button from '../button/button';
+import styled from 'styled-components';
 
 import PersonIcon from "./../../images/icon-person.png";
 import MailIcon from "./../../images/icon-mail.png";
 import { Formik, Form } from 'formik';
 
 import * as Yup from "yup";
-import SubmitButton from './submit-button';
+import SubmitButton from './submit-button/submit-button';
 import Formfield from './formfield';
 import {Input, Textarea} from './input';
-import { Persist } from 'formik-persist';
+import { Persist } from './formik-persist';
 
-function delayPromise(duration) {
-  return function(...args){
-    return new Promise(function(resolve, reject){
-      setTimeout(function(){
-        resolve(...args);
-      }, duration)
-    });
-  };
-}
+
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -44,7 +35,14 @@ const SignupSchema = Yup.object().shape({
 });
 
 
-const HoneyPot = styled.div`
+
+const HoneyPot = ({className, name}) => (
+  <div className={className}>
+    <input name={name} />
+  </div>
+)
+
+const HoneyPotField = styled(HoneyPot)`
   ${hideVisually()};
 `
 
@@ -79,8 +77,6 @@ export class ContactForm extends React.Component {
   }
 
   submit(values, { setSubmitting }){
-    const data = JSON.stringify(values, null, 2);
-
     setSubmitting(true);
 
     this.setState({
@@ -114,18 +110,12 @@ export class ContactForm extends React.Component {
   }
 
   onSubmitSuccess = (setSubmitting) => {
-    console.log('onSubmitSuccess')
-
-
     setSubmitting(false);
+
     this.setState({
       completed: true,
       success: true
     })
-
-    window.localStorage.setItem('contact-form', null);
-
-    // this.reset();
   }
 
   onSubmitError = (error, setSubmitting) => {
@@ -158,7 +148,7 @@ export class ContactForm extends React.Component {
 
             return (
             <Form data-netlify-honeypot="non-human-field" data-netlify="true" >
-              <HoneyPot/>
+              <HoneyPotField name='non-human-field'/>
 
               <FormGroup>
                 <Formfield
@@ -198,7 +188,7 @@ export class ContactForm extends React.Component {
                   sending={isSubmitting}>Senden {isSubmitting}</SubmitButton>
               </FormGroup>
               {
-                this.state.completed ? null : (<Persist name="contact-form" />)
+                <Persist name="contact-form" completed={this.state.completed} />
               }
 
             </Form>

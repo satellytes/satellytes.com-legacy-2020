@@ -51,10 +51,6 @@ const startsWith = (string, search) => {
 };
 
 class NavigationItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   isActive() {
     // partially match to match all subroutes too
     if(this.props.partialMatch) {
@@ -66,7 +62,6 @@ class NavigationItem extends React.Component {
 
   render() {
     const active = this.isActive();
-
 
     return (
       <NavigationLink active={active}>

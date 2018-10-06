@@ -1,5 +1,5 @@
 import React from 'react'
-import IconCheckmark from './../../assets/svg/checkmark.svg';
+import IconCheckmark from './../../../assets/svg/checkmark.svg';
 import styled, { css } from 'styled-components';
 import {CSSTransition} from 'react-transition-group';
 

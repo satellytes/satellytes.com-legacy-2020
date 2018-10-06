@@ -6,8 +6,10 @@ import isEqual from 'react-fast-compare';
 export interface PersistProps {
   name: string;
   debounce?: number;
+  completed: boolean
 }
 
+// Forked version to clear form storage when submission if successful
 class PersistImpl extends React.Component<
   PersistProps & { formik: FormikProps<any> },
   {}
@@ -17,11 +19,17 @@ class PersistImpl extends React.Component<
   };
 
   saveForm = debounce((data: FormikProps<{}>) => {
-    window.localStorage.setItem(this.props.name, JSON.stringify(data));
+    if(data) {
+      window.localStorage.setItem(this.props.name, JSON.stringify(data));
+    } else {
+      window.localStorage.removeItem(this.props.name);
+    }
   }, this.props.debounce);
 
-  componentDidUpdate(prevProps: PersistProps & { formik: FormikProps<any> }) {
-    if (!isEqual(prevProps.formik, this.context.formik)) {
+  componentDidUpdate(prevProps: PersistProps & { formik: FormikProps<any> }, newProps) {
+    if(this.props.completed) {
+      this.saveForm(null);
+    }else if (!isEqual(prevProps.formik, this.context.formik)) {
       this.saveForm(prevProps.formik);
     }
   }

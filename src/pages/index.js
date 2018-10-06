@@ -14,10 +14,10 @@ class IndexPage extends React.Component {
 
     return (
       <PageLayout>
-        <SectionContact events={events}/>
         <SectionIntro/>
         <SectionWhat/>
         <SectionWhy/>
+        <SectionContact events={events}/>
       </PageLayout>
     )
   }
