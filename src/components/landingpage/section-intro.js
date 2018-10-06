@@ -37,7 +37,7 @@ const SatellytesSVGLogo = styled.svg`
   max-width: 760px;
 
   fill: ${ ({theme}) => theme.fontWeight.dark };
-  z-index: 100;
+  z-index: 0;
   animation: 3s cubic-bezier(0.5, 0.1, 0.37, 1) ${scaleInLogo} forwards;
 
   ${breakpoint('sm')`

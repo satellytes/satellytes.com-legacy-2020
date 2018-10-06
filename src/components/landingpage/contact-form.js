@@ -10,33 +10,35 @@ import { Formik, Form, Field } from 'formik';
 
 import * as Yup from "yup";
 
+function delayPromise(duration) {
+  return function(...args){
+    return new Promise(function(resolve, reject){
+      setTimeout(function(){
+        resolve(...args);
+      }, duration)
+    });
+  };
+}
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Required'),
-  message: Yup.string()
-    .min(2, 'Too Short!')
-    .max(500, 'Too Long!')
-    .required('Required'),
+    .max(256, 'Das ist zu lang')
+    .required('Wir würden dich gerne mit Namen ansprechen'),
+
+    email: Yup.string()
+    .email('Bei dieser Adresse scheint etwas nicht zu stimmen')
+    .required('Wir brauchen deine E-Mail, um dich zu kontaktieren'),
+
+    message: Yup.string()
+    .min(10, 'Diese Nachricht ist ein bisschen zu kurz')
+    .max(5000, 'Die Nachricht ist zu lang.')
+    .required('Die Nachricht fehlt, du willst uns doch eine schicken oder?'),
 });
-
-const Formfield = styled.div`
-  position: relative;
-  align-items: center;
-  background-color: ${rgba("#000000", 0.2)};
-  border-radius: 5px;
-  color: white;
-
-  ${({error}) => error ? css`
-    border: 1px solid  ${({theme}) => theme.colors.error};
-    color: ${({theme}) => theme.colors.error};
-  ` : null }
-`;
-
 const IconWrapper = styled.div`
   position: absolute;
   height: 100%;
@@ -108,28 +110,90 @@ const HoneyPot = styled.div`
 `
 
 const FormGroup = styled.div`
-  & + & {
+  &:not(:first-child) {
     margin-top: 20px;
   }
 `;
 
-
 const ErrorMessage = styled.div`
   color: ${ ({theme}) => theme.colors.error };
 `
-const Textfield = ({icon, children, hasError, errorMessage}) => (
+
+const InputWrapper = styled.div`
+  position: relative;
+  align-items: center;
+  background-color: ${rgba("#000000", 0.2)};
+  border-radius: 5px;
+  color: white;
+
+  ${({error}) => error ? css`
+    border: 1px solid  ${({theme}) => theme.colors.error};
+    color: ${({theme}) => theme.colors.error};
+  ` : null }
+`;
+
+
+const Formfield = ({id, label, icon, children, hasError, errorMessage}) => (
   <div>
-    <Formfield error={hasError}>
+    <label htmlFor={id}>{label}</label>
+    <InputWrapper error={hasError}>
       {children}
       { icon ? <Icon src={icon}/> : null }
-    </Formfield>
-    {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null }
+    </InputWrapper>
+    {hasError ? <ErrorMessage>{errorMessage}</ErrorMessage> : null }
   </div>
 )
 
 const FormLayout = styled.div`
   margin-top: 20px;
 `
+
+const SubmitButtonLayout = styled.div`
+  position: relative;
+  padding-left: 18px;
+  text-align: left;
+
+  ${ ({isSubmitting}) => isSubmitting ? css`
+    background-color: red;
+  ` : ''};
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+
+  &.reset::after {
+    transition: none;
+    transform: translateX(-100%);
+  }
+
+  :before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:before {
+    background-color: ${({theme}) => theme.colors.light};
+    z-index: -2;
+    transition: background-color .2s ease;
+  }
+
+  &:after {
+    background-color: #B3F2FF;
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+    z-index: -1;
+  }
+`
+
+const SubmitButton = (props) => (
+  <SubmitButtonLayout {...props}>{props.children}</SubmitButtonLayout>
+);
 
 export class ContactForm extends React.Component {
   constructor() {
@@ -143,14 +207,47 @@ export class ContactForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.submit = this.submit.bind(this);
-    this.validate = this.validate.bind(this);
   }
 
   submit(values, { setSubmitting }){
-      setTimeout(() => {
-        console.log(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-    }, 400);
+    const data = JSON.stringify(values, null, 2);
+
+    setSubmitting(true);
+
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({
+    //     "form-name": "sy-contact-form",
+    //     ...values
+    //   })
+    // })
+    Promise.resolve(true)
+    .then(delayPromise(3000))
+    .then(() => {
+      this.onSubmitSuccess()
+    })
+    .catch(this.onSubmitError)
+    .finally(() => {
+      setSubmitting(false)
+    })
+  }
+  onSubmitSuccess = response => {
+    console.log('onSubmitSuccess')
+    this.setState({
+      submitting: false,
+      success: true
+    })
+    this.setState({success: true})
+  }
+
+  onSubmitError = error => {
+    console.log('onSubmitError')
+    this.setState({
+      submitting: false,
+      error: true
+    })
+
   }
 
   handleChange = field => event => {
@@ -158,20 +255,14 @@ export class ContactForm extends React.Component {
     this.setState({ [field]: event.target.value});
   }
 
-  validate(values) {
-    console.log('validate');
-
-    let errors = {};
-    errors.name = 'not good';
-    return errors;
-  }
-
   render() {
 
     return (
       <FormLayout>
         <Formik
-          validationSchema={SignupSchema}
+          initialValues={{ name: '', email: '', message: '' }}
+          validateOnBlur={true}
+          // validationSchema={SignupSchema}
           onSubmit={this.submit}
         >
           {({ errors, touched, isSubmitting }) => (
@@ -179,25 +270,32 @@ export class ContactForm extends React.Component {
               <HoneyPot/>
 
               <FormGroup>
-                <Textfield icon={PersonIcon} hasError={errors.name && touched.name} errorMessage={errors.name}>
-                  <Input name="name" />
-                </Textfield>
+                <Formfield
+                  id="name" icon={PersonIcon} label='Name'
+                  hasError={errors.name && touched.name} errorMessage={errors.name}>
+                  <Input id="name" name="name" placeholder="Name" />
+                </Formfield>
               </FormGroup>
 
               <FormGroup >
-                <Textfield icon={MailIcon} hasError={errors.email && touched.email} errorMessage={errors.email}>
-                  <Input name="email"/>
-                </Textfield>
+                <Formfield
+                  icon={MailIcon} id='email' label='E-Mail'
+                  hasError={errors.email && touched.email} errorMessage={errors.email}>
+                  <Input id='email' name="email" placeholder="E-Mail"/>
+                </Formfield>
               </FormGroup>
 
               <FormGroup>
-                <Textfield hasError={errors.message && touched.message} errorMessage={errors.message} >
-                  <Textarea name="message"/>
-                </Textfield>
+                <Formfield
+                  id='message' label='Ihre Nachricht'
+                  hasError={errors.message && touched.message} errorMessage={errors.message} >
+                  <Textarea id='message' name="message"  placeholder="Nachricht"/>
+                </Formfield>
               </FormGroup>
 
               <FormGroup>
                 <Button type='submit' disabled={isSubmitting} >Senden</Button>
+                <SubmitButton isSubmitting={isSubmitting}>Senden</SubmitButton>
               </FormGroup>
             </Form>
           )}
