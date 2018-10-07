@@ -7,8 +7,9 @@ import {HeadlineContent} from '../typography/headline';
 import Copy from '../typography/copy';
 
 import rehypeReact from "rehype-react"
-import DateInfo from './date-info';
-import Separator from './separator';
+import { ContentFooter } from '../content-footer/content-footer';
+
+
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -64,15 +65,18 @@ const Description = ({markdown}) => {
 };
 
 
-export default ({ article }) => {
+export default (props) => {
+  const {article} = props;
+  console.log({props});
 
   return (
   <Layout>
     <TeaserImage article={article}/>
     <Header article={article}/>
     <Description markdown={article.description.childMarkdownRemark}/>
-    <DateInfo article={article}/>
-
-    <Separator/>
+    <ContentFooter
+      {...props}
+      createdAt={article.updatedAt}
+      updatedAt={article.updatedAt}/>
   </Layout>
 )}

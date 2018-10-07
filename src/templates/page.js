@@ -1,14 +1,13 @@
 import React from "react"
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
 import PageLayout from "../components/layout/page-layout"
 import { graphql } from "gatsby"
 
 import { Content, Section} from '../components/layout/layout';
 import MarkdownContentful from '../components/typography/markdown-contentful';
 import { HeadlineContent } from "../components/typography/headline";
-import DateInfo from "../components/blog/date-info";
 import Img from "gatsby-image"
+
+import { ContentFooter } from "../components/content-footer/content-footer";
 
 const Header = ({title}) => (
   <header>
@@ -33,18 +32,19 @@ const HeroImage = ({image, alt}) => {
 class PageTemplate extends React.Component {
   render() {
     const page = this.props.data.contentfulPage
-
     return (
       <PageLayout light="true">
-        <Helmet title={`${page.title}`} />
-
         <article>
           <HeroImage image={page.heroImage}/>
           <Content>
             <Section>
               <Header title={page.title} alt={page.title} />
               <MarkdownContentful markdown={page.body.childMarkdownRemark} />
-              <DateInfo article={page}/>
+              <ContentFooter
+                showShare={true}
+                createdAt={page.createdAt}
+                updatedAt={page.updatedAt}
+                {...this.props}/>
             </Section>
           </Content>
         </article>
@@ -58,6 +58,12 @@ export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+      }
+    }
     contentfulPage(id: { eq: $id }) {
       title
 

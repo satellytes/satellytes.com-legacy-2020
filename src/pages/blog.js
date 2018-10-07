@@ -26,7 +26,7 @@ class BlogIndex extends React.Component {
 
             {posts.map(({ node }) => {
               return (
-                <ArticlePreview  key={node.slug} article={node} />
+                <ArticlePreview  key={node.slug} article={node}  {...this.props}/>
               )
             })}
           </Section>
@@ -41,6 +41,12 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+      }
+    }
     allContentfulBlogPost {
       edges {
         node {

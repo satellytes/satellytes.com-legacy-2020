@@ -7,11 +7,11 @@ import { graphql } from "gatsby"
 import { HeadlineContent } from '../components/typography/headline';
 import Img from "gatsby-image"
 import { Content, Section} from '../components/layout/layout';
-import DateInfo from '../components/blog/date-info';
-import Separator from '../components/blog/separator';
 
 import ArticleFooter from '../components/blog/article-footer';
 import MarkdownContentful from '../components/typography/markdown-contentful';
+import DateInfo from '../components/content-footer/date-info';
+import Separator from '../components/content-footer/separator';
 
 const Header = ({article}) => (
   <header>
@@ -43,10 +43,7 @@ class BlogPostTemplate extends React.Component {
             <Section>
               <Header article={article}/>
               <MarkdownContentful markdown={article.body.childMarkdownRemark} />
-              <DateInfo article={article}/>
-              <Separator/>
-              <ArticleFooter article={article}/>
-
+              <ArticleFooter {...this.props} article={article}/>
             </Section>
           </Content>
 
@@ -60,6 +57,12 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query ($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+      }
+    }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       slug

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Separator = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 
   width: 64px;
   background-color: ${ ({theme}) => theme.colors.dark};

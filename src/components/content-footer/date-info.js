@@ -5,10 +5,10 @@ const DateGroup = styled.div`
   color: #aaa;
 `
 
-const DateInfo = ({article}) =>(
+const DateInfo = ({updatedAt, createdAt}) =>(
   <DateGroup>
-    <span>Aktualisiert: {article.updatedAt}</span>, &nbsp;
-    <span>Erstellt: {article.createdAt}</span>
+    <span>Aktualisiert: {updatedAt}</span>, &nbsp;
+    <span>Erstellt: {createdAt}</span>
   </DateGroup>
 );
 

@@ -26,6 +26,7 @@ console.log(contentfulConfig)
 module.exports = {
   siteMetadata: {
     title: 'Satellytes',
+    siteUrl: process.env.DEPLOY_PRIME_URL || "https://www.satellytes.com"
   },
   plugins: [
     `gatsby-plugin-typescript`,
