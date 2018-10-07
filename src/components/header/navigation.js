@@ -5,11 +5,15 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Location } from '@reach/router';
 
-const items = [
+let items = [
   {title: "Home", to: '/', id: 1},
   {title: "Career", to:'/page/career/', id: 2},
   {title: "Blog", to:'/blog/', id: 3, partialMatch: true}
 ]
+
+items = items.filter(item => {
+  return !(item.to === '/blog/' && !process.env.BLOG_ENABLED);
+})
 
 const Bar = styled.div`
   height: 2px;

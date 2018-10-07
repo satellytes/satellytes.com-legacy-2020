@@ -8,8 +8,8 @@ const SectionWhy = () => (
   <Content>
     <Section breakout>
       <DisplayHeader
-        headline='Versprechen'
-        tagline='Wir sind auf Ihrer Seite. Und auf der des Nutzers.'/>
+        tagline='Versprechen'
+        headline='Wir sind auf Ihrer Seite. Und auf der des Nutzers.'/>
     </Section>
 
     <Section>

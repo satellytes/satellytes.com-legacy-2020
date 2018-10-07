@@ -1,29 +1,18 @@
 import React from 'react'
 import DisplayHeader from '../typography/display-header';
 
-import styled from 'styled-components';
-
-import { HeadlineSection } from '../typography/headline';
+import { HeadlineSection, HeadlineService, HeadlineParagraph } from '../typography/headline';
 import Copy from '../typography/copy';
-import { ListItem, List } from '../list';
+import { ListItem, List, UnorderedList } from '../list';
 import { Content, Section, Grid, Column } from '../layout/layout';
 import { Clients } from './clients';
-
-
-const HeadlineService = styled.h4`
-  color: ${({ theme }) => theme.colors.white};
-  margin-bottom: 7px;
-  font-weight:  ${({ theme }) => theme.fontWeight.bold};
-  font-family: ${ ({theme}) => theme.fontFamily.coco };
-  font-size: 1.7rem;
-`
 
 const SectionWhat = ({data}) => (
   <Content>
     <Section breakout>
       <DisplayHeader
-        headline='Angebot'
-        tagline='Wir bieten nur an, was wir par excellence können.'/>
+        tagline='Angebot'
+        headline='Wir bieten nur an, was wir par excellence können.'/>
     </Section>
 
     <Section>
@@ -34,10 +23,10 @@ const SectionWhat = ({data}) => (
     <Section>
       <Grid>
         <Column>
-          <HeadlineService>UX/UI</HeadlineService>
+          <HeadlineParagraph>UX/UI</HeadlineParagraph>
           <Copy>Mit rund 20 Jahren Erfahrung in der Konzeption und Umsetzung digitaler Interfaces kennen und können wir das gesamte Spektrum der User Experience (UX). Der kleine, sichtbare Teil davon ist das User Interface (UI), der große unsichtbare (UX) jedoch viel relevanter für die Erreichung ihrer wirtschaftlichen Ziele. Denn nur mit benutzerfreundlichen, leicht verständlichen Journeys über alle Endgeräte, Nutzergruppen und Nutzungskontexte hinweg, erreichen die User und somit Sie ihr Ziel.</Copy>
 
-          <List>
+          <UnorderedList>
             <ListItem>Informationsarchitektur (und Navigation)</ListItem>
             <ListItem>Information/Content Design (Readability, Scanability, Consistency, Density, Sizes)</ListItem>
             <ListItem>User Interface Design (Atomic Design, Pattern Libraries)</ListItem>
@@ -45,7 +34,7 @@ const SectionWhat = ({data}) => (
             <ListItem>Brand Experience</ListItem>
             <ListItem>Accessibility (WAI)</ListItem>
             <ListItem>Loading-, Responsive-Strategien, Performance</ListItem>
-          </List>
+          </UnorderedList>
         </Column>
         <Column twocol>
           <HeadlineService>Full Stack</HeadlineService>

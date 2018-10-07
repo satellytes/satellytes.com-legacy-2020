@@ -33,11 +33,10 @@ const HeroImage = ({image, alt}) => {
 class PageTemplate extends React.Component {
   render() {
     const page = this.props.data.contentfulPage
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <PageLayout light="true">
-        <Helmet title={`${page.title} | ${siteTitle}`} />
+        <Helmet title={`${page.title}`} />
 
         <article>
           <HeroImage image={page.heroImage}/>

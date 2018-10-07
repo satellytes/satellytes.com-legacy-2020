@@ -2,6 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import { HeadlineDisplay } from './headline';
 
 const HeaderWrapper = styled.header`
   color: ${ ({theme}) => theme.colors.light};
@@ -13,29 +14,15 @@ const HeaderWrapper = styled.header`
   `}
 `;
 
-const Headline = styled.h2`
+const Tagline = styled.span`
   font-size: 3.5rem;
   margin-bottom: 10px;
 `
 
-const Tagline = styled.span`
-  margin-top: 10px;
-  font-style: italic;
-  display: block;
-  text-transform: uppercase;
-  font-size: 3.5rem;
-  line-height: 1.17;
-  font-weight: ${({theme}) => theme.fontWeight.light };
-
-  ${breakpoint('md')`
-    font-size: 6rem;
-  `}
-`
-
 const DisplayHeader = ({headline, tagline}) => (
   <HeaderWrapper>
-    <Headline>{headline}</Headline>
     <Tagline>{tagline}</Tagline>
+    <HeadlineDisplay>{headline}</HeadlineDisplay>
   </HeaderWrapper>
 )
 

@@ -38,7 +38,7 @@ export const SectionLayout = styled.div.attrs({
   className: p => p.show ? 'is-showing' : '',
 })`
   grid-column: main;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 
   transition: transform .3s ease, opacity .3s ease;
   transform: translateY(15px);

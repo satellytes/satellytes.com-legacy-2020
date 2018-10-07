@@ -16,6 +16,7 @@ import 'typeface-roboto';
 const PageWrapper = styled.div`
   padding-top: ${ ({theme}) => theme.navHeight }px;
   flex-grow: 1;
+  padding-bottom: 20px;
 `
 
 const Page = styled.div`

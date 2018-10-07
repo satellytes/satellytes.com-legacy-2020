@@ -48,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust:none;
   }
 
   html, body, #___gatsby, #___gatsby > div {
@@ -66,6 +67,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: inherit;
+    text-decoration: none;
   }
 `
 
