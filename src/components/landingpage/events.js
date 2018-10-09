@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import {rgba} from 'polished';
 
 const EventBox = styled.div`
   width: 5rem;
@@ -14,10 +15,6 @@ const EventBox = styled.div`
   text-transform: uppercase;
   line-height: 1.05;
   flex-shrink: 0;
-  ${({ isPast, theme }) => isPast && `
-    text-decoration: line-through;
-    background-color: ${ theme.colors.grey }
-  `}
 `
 
 const isFromPast = date => {
@@ -25,7 +22,7 @@ const isFromPast = date => {
 }
 
 const EventItem = ({event}) => (
-  <EventLayout key={event.id}>
+  <EventLayout key={event.id} isPast={isFromPast(event.date)}>
     <EventBox isPast={isFromPast(event.date)} title={event.dateTitle}>
       {event.dateShort}
     </EventBox>
@@ -44,6 +41,10 @@ const EventLayout = styled.div`
   &:not(:first-child) {
     margin-top: 20px;
   }
+
+  ${({ isPast, theme }) => isPast && `
+    opacity: 0.3;
+  `}
 `
 
 const Title = styled.h4`

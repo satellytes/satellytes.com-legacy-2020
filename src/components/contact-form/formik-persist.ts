@@ -37,7 +37,13 @@ class PersistImpl extends React.Component<
   componentDidMount() {
     const maybeState = window.localStorage.getItem(this.props.name);
     if (maybeState && maybeState !== null) {
-      this.props.formik.setFormikState(JSON.parse(maybeState));
+      const maybeStateParsed = JSON.parse(maybeState);
+      // remove any touch and submit states otherwise the form would go to the state submit onload
+      // and also show errors immediately.
+      maybeStateParsed.touched = false;
+      maybeStateParsed.isSubmitting = false;
+
+      this.props.formik.setFormikState(maybeStateParsed);
     }
   }
 

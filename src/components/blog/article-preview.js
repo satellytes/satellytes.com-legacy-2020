@@ -52,7 +52,7 @@ const Header = ({article}) => (
   <HeaderLayout>
     <Category>UX/UI</Category>
     <HeadlineContent>
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+      {article.title}
     </HeadlineContent>
   </HeaderLayout>
 );
@@ -71,12 +71,14 @@ export default (props) => {
 
   return (
   <Layout>
-    <TeaserImage article={article}/>
-    <Header article={article}/>
-    <Description markdown={article.description.childMarkdownRemark}/>
-    <ContentFooter
-      {...props}
-      createdAt={article.updatedAt}
-      updatedAt={article.updatedAt}/>
+    <Link to={`/blog/${article.slug}`}>
+      <TeaserImage article={article}/>
+      <Header article={article}/>
+      <Description markdown={article.description.childMarkdownRemark}/>
+      <ContentFooter
+        {...props}
+        createdAt={article.updatedAt}
+        updatedAt={article.updatedAt}/>
+    </Link>
   </Layout>
 )}

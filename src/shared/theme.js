@@ -47,7 +47,7 @@ export const themeLight = {
   colors: {
     white: '#202840',
     dark: '#5CCFE6',
-    light: '#5CCFE6',
+    light: '#29B1CC',
     grey: '#A9A9A9'
   },
 

@@ -2,8 +2,6 @@ import {hideVisually} from 'polished';
 import React from 'react'
 import styled from 'styled-components';
 
-import PersonIcon from "./../../images/icon-person.png";
-import MailIcon from "./../../images/icon-mail.png";
 import { Formik, Form } from 'formik';
 
 import * as Yup from "yup";
@@ -143,7 +141,7 @@ export class ContactForm extends React.Component {
           validationSchema={SignupSchema}
           onSubmit={this.submit}
         >
-          {({ errors, touched, isSubmitting }) => {
+          {({ errors, touched, isSubmitting, isValid }) => {
             const disabled = isSubmitting || this.state.completed;
 
             return (
@@ -154,7 +152,7 @@ export class ContactForm extends React.Component {
 
               <FormGroup>
                 <Formfield
-                  id="name" icon={PersonIcon} label='Name'
+                  id="name" label='Name'
                   hasError={errors.name && touched.name} errorMessage={errors.name}>
                   <Input id="name" name="name" disabled={disabled} />
                 </Formfield>
@@ -162,7 +160,7 @@ export class ContactForm extends React.Component {
 
               <FormGroup >
                 <Formfield
-                  icon={MailIcon} id='email' label='E-Mail'
+                  id='email' label='E-Mail'
                   hasError={errors.email && touched.email} errorMessage={errors.email}>
                   <Input id='email' name="email" disabled={disabled} />
                 </Formfield>
@@ -183,6 +181,7 @@ export class ContactForm extends React.Component {
                   ) : null
                 }
                 <SubmitButton
+                  active={isValid}
                   disabled={disabled}
                   progressLabel='Sende...'
                   completeLabel='Gesendet'

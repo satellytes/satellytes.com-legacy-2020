@@ -10,6 +10,9 @@ import CheckmarkAnimated from './checkmark-animated';
 
 const ButtonBase = styled(Button)`
   position: relative;
+  ${({active}) => !active ? css`
+    opacity: 0.3;
+  ` : null}
 `
 
 const LabelAnimation = css`
@@ -54,7 +57,7 @@ const Label = ({children, complete}) => (
   </CSSTransition>
 )
 
-const SubmitButton = ({children, progressLabel, completeLabel, sending, completed, disabled}) => {
+const SubmitButton = ({children, progressLabel, completeLabel, sending, completed, disabled, active}) => {
 
   function getLabel() {
     if(completed) {
@@ -67,7 +70,7 @@ const SubmitButton = ({children, progressLabel, completeLabel, sending, complete
   }
 
   return (
-    <ButtonBase type='submit' disabled={disabled}>
+    <ButtonBase type='submit' disabled={disabled} active={active}>
       <Progress complete={completed} sending={sending}/>
       <Label complete={completed}>{getLabel()}</Label>
     </ButtonBase>

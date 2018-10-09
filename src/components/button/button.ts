@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { rgba } from "polished";
 
 const Button = styled.button`
+  cursor: pointer;
   display: block;
   width: 100%;
   line-height:  50px;

@@ -5,6 +5,8 @@ import { rgba } from 'polished';
 
 const ErrorMessage = styled.div`
   color: ${ ({theme}) => theme.colors.error };
+  font-size: 1.3rem;
+  margin-top: 5px;
 `
 
 const InputWrapper = styled.div`
