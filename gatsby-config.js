@@ -1,26 +1,34 @@
 const environment = process.env.NODE_ENV || 'production';
 
-console.log('deploy');
-console.log(JSON.stringify(process.env));
+let contentfulLoadedConfig = {};
+let contentfulConfig = {};
 
 try {
   // Load the Contentful config from the .contentful.json
-  contentfulConfig = require('./.contentful')
-  if(contentfulConfig) {
-    contentfulConfig = contentfulConfig[environment];
-  }
+  contentfulLoadedConfig = require('./.contentful')
 } catch (_) {}
 
 require("dotenv").config({
   path: `.env.${environment}`,
 })
 
+
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
-  host: process.env.CONTENTFUL_HOST || contentfulConfig.host
+  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulLoadedConfig.spaceId,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulLoadedConfig.accessToken,
+  host: process.env.CONTENTFUL_HOST || contentfulLoadedConfig.host
 }
+
+// include drafts from contentful
+if(process.env.FULL_PREVIEW) {
+  contentfulConfig = {
+    ...contentfulConfig,
+    accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN || contentfulLoadedConfig.previewAccessToken,
+    host: process.env.CONTENTFUL_PREVIEW_HOST || contentfulLoadedConfig.previewHost
+  }
+}
+
 
 const { spaceId, accessToken } = contentfulConfig
 

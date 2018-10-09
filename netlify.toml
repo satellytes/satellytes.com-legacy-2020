@@ -1,0 +1,6 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[context.staging]
+  environment = { FULL_PREVIEW = "super secret" }
