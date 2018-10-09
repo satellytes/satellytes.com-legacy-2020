@@ -50,18 +50,26 @@ const HeaderLayout = styled.header`
 
 const Header = ({article}) => (
   <HeaderLayout>
-    <Category>UX/UI</Category>
-    <HeadlineContent>
-      {article.title}
-    </HeadlineContent>
+    <Link to={`/blog/${article.slug}`}>
+      <Category>UX/UI</Category>
+      <HeadlineContent>
+        {article.title}
+      </HeadlineContent>
+    </Link>
   </HeaderLayout>
 );
 
 const DescriptionLayout = styled.div`
   margin-bottom: 20px;
 `
-const Description = ({markdown}) => {
-  return (<DescriptionLayout>{renderAst(markdown.htmlAst)}</DescriptionLayout>)
+const Description = ({markdown, article}) => {
+  return (
+  <DescriptionLayout>
+    <Link to={`/blog/${article.slug}`}>
+    {renderAst(markdown.htmlAst)}
+    </Link>
+  </DescriptionLayout>
+  )
 };
 
 
@@ -71,14 +79,16 @@ export default (props) => {
 
   return (
   <Layout>
-    <Link to={`/blog/${article.slug}`}>
+
       <TeaserImage article={article}/>
       <Header article={article}/>
-      <Description markdown={article.description.childMarkdownRemark}/>
+      <Description
+        article={article}
+        markdown={article.description.childMarkdownRemark}/>
       <ContentFooter
         {...props}
         createdAt={article.updatedAt}
         updatedAt={article.updatedAt}/>
-    </Link>
+
   </Layout>
 )}

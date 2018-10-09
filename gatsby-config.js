@@ -1,16 +1,25 @@
+const environment = process.env.NODE_ENV || 'production';
+
+console.log('deploy');
+console.log(JSON.stringify(process.env));
+
 try {
   // Load the Contentful config from the .contentful.json
   contentfulConfig = require('./.contentful')
+  if(contentfulConfig) {
+    contentfulConfig = contentfulConfig[environment];
+  }
 } catch (_) {}
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${environment}`,
 })
 
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  host: process.env.CONTENTFUL_HOST || contentfulConfig.host
 }
 
 const { spaceId, accessToken } = contentfulConfig
@@ -20,8 +29,6 @@ if (!spaceId || !accessToken) {
     'Contentful spaceId and the delivery token need to be provided.'
   )
 }
-
-console.log(contentfulConfig)
 
 module.exports = {
   siteMetadata: {
