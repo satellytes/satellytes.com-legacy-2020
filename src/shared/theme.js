@@ -5,6 +5,11 @@ export const theme = {
   },
   navHeight: 60,
   pagePadding: 20,
+  layout: {
+    contentMaxWidth: 900,
+    breakoutWidth: 30,
+    gridGap: 30
+  },
   colors: {
     white: '#ffffff',
     dark: '#202840',

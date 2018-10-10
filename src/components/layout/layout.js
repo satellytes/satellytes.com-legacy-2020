@@ -7,9 +7,9 @@ const mobileGutterSize = `20px`;
 
 // Content + Section define the basic normal vs. breakout layout
 export const Content = styled.div`
-  max-width: 760px;
+  max-width: ${ ({theme}) => theme.layout.contentMaxWidth }px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 ${({theme}) => theme.layout.gridGap}px;
   padding-top: 60px;
 
   & + & {
@@ -18,8 +18,8 @@ export const Content = styled.div`
 
   ${breakpoint('md')`
     display: grid;
-    grid-template-columns:  [full-start] 30px [main-start] 1fr 1fr [main-end] 30px [full-end];
-    grid-gap: 30px;
+    grid-template-columns:  [full-start] ${({theme}) => theme.layout.breakoutWidth}px [main-start] 1fr 1fr [main-end] ${({theme}) => theme.layout.breakoutWidth}px [full-end];
+    grid-gap: ${({theme}) => theme.layout.gridGap}px;
   `}
 `;
 
@@ -54,10 +54,14 @@ export const SectionLayout = styled.div.attrs({
   }
 `;
 
-class Test extends React.Component {
+// Required as waypoint needs a dom element
+// and it won't recognize styled component
+// due to ref property being ignored by styled component
+class WaypointWrapper extends React.Component {
   render() {
     return (
       <SectionLayout
+        breakout={this.props.breakout}
         ref={this.props.innerRef}
         show={this.props.show}>
         {this.props.children}
@@ -84,9 +88,9 @@ export class Section extends React.Component {
 
     return (
       <Waypoint onEnter={() => this._handleWaypointEnter()}>
-        <Test show={this.state.visible}>
+        <WaypointWrapper show={this.state.visible} {...this.props}>
         {this.props.children}
-        </Test>
+        </WaypointWrapper>
       </Waypoint>
 
     )
@@ -103,7 +107,7 @@ export const Grid = styled.div`
   ${breakpoint('md')`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: ${({theme}) => theme.layout.gridGap}px;
   `}
 `;
 
