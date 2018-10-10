@@ -32,7 +32,7 @@ class PageTemplate extends React.Component {
               <MarkdownContentful
                 markdown={page.body.childMarkdownRemark} />
               <ContentFooter
-                showShare={true}
+                showShare={page.shareable}
                 createdAt={page.createdAt}
                 updatedAt={page.updatedAt}
                 {...this.props}/>
@@ -56,6 +56,7 @@ export const pageQuery = graphql`
     }
     contentfulPage(id: { eq: $id }) {
       title
+      shareable
 
       createdAt(formatString: "DD.MMM YYYY")
       updatedAt(formatString: "DD.MMM YYYY")

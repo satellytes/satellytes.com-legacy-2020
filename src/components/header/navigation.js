@@ -62,7 +62,7 @@ class NavigationItem extends React.Component {
 
   render() {
     const active = this.isActive();
-
+    console.log(this.props)
     return (
       <NavigationLink active={active}>
         <Link to={this.props.to}>{this.props.title}</Link>
@@ -103,8 +103,10 @@ class Navigation extends React.Component {
           {
             items.map( (item, index) => (
               <NavigationItem
+                key={item.to}
                 location={location}
-                title={item.title} to={item.to} key={item.to}></NavigationItem>
+                {...item}>
+              </NavigationItem>
             ))
           }
           </NavigationLayout>

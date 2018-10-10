@@ -13,6 +13,8 @@ const HorizontalLayout = styled.div`
 
 const ShareButton = styled.div`
   display: inline-block;
+  cursor: pointer;
+
   &:not(:first-child) {
     margin-left: 23px;
   }
