@@ -1,7 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import {rgba} from 'polished';
 
 const EventBox = styled.div`
   width: 5rem;

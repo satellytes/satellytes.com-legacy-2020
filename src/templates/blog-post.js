@@ -18,7 +18,6 @@ const Header = ({article}) => (
 class BlogPostTemplate extends React.Component {
   render() {
     const article = get(this.props, 'data.contentfulBlogPost')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <PageLayout light="true">

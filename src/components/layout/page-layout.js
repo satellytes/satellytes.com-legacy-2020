@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../header/header'
@@ -12,7 +11,6 @@ import styled from "styled-components";
 import GlobalStyles from '../../shared/globalStyles';
 
 import 'typeface-roboto';
-import PageMeta from '../page-meta';
 
 const PageWrapper = styled.div`
   padding-top: ${ ({theme}) => theme.navHeight }px;

@@ -27,7 +27,7 @@ const Credits = ({title, url}) => {
 
   return (
     <CreditStyles>
-      <a target='_blank' href={url}>{title}</a>
+      <a target='_blank' href={url} rel="noopener noreferrer">{title}</a>
     </CreditStyles>
   )
 };

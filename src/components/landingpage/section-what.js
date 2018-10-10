@@ -3,7 +3,7 @@ import DisplayHeader from '../typography/display-header';
 
 import { HeadlineSection, HeadlineService, HeadlineParagraph } from '../typography/headline';
 import Copy from '../typography/copy';
-import { ListItem, List, UnorderedList } from '../list';
+import { ListItem, UnorderedList } from '../list';
 import { Content, Section, Grid, Column } from '../layout/layout';
 import { Clients } from './clients';
 

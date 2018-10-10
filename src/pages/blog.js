@@ -1,7 +1,6 @@
 import React from 'react'
 
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 import ArticlePreview from '../components/blog/article-preview'
 import PageLayout from '../components/layout/page-layout'
 import { HeadlineContent } from '../components/typography/headline';
@@ -15,7 +14,6 @@ const Headline = styled(HeadlineContent)`
 `
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
