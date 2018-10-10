@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 import { Content, Section} from '../components/layout/layout';
 import { graphql } from 'gatsby';
+import PageMeta from '../components/page-meta';
 const Headline = styled(HeadlineContent)`
   margin-bottom: 40px;
 `
@@ -19,7 +20,7 @@ class BlogIndex extends React.Component {
 
     return (
       <PageLayout light="true">
-        <Helmet title={siteTitle} />
+        <PageMeta title='Blog' {...this.props}/>
         <Content>
           <Section>
             <Headline>Blog</Headline>

@@ -12,6 +12,7 @@ import ArticleFooter from '../components/blog/article-footer';
 import MarkdownContentful from '../components/typography/markdown-contentful';
 import DateInfo from '../components/content-footer/date-info';
 import Separator from '../components/content-footer/separator';
+import PageMeta from '../components/page-meta';
 
 const Header = ({article}) => (
   <header>
@@ -34,7 +35,10 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <PageLayout light="true">
-        <Helmet title={`${article.title} | ${siteTitle}`} />
+        <PageMeta
+          {...this.props}
+          article={article}
+          title={article.title}/>
 
         <article>
           <HeroImage article={article}/>
@@ -68,6 +72,11 @@ export const pageQuery = graphql`
       slug
       createdAt(formatString: "DD.MMM YYYY")
       updatedAt(formatString: "DD.MMM YYYY")
+      excerpt: description {
+        childMarkdownRemark {
+          excerpt
+        }
+      }
       body {
         childMarkdownRemark {
           htmlAst

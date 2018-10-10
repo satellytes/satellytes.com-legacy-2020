@@ -24,7 +24,7 @@ const Border = styled.hr`
   z-index: 10;
   margin:0;
 `
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <Layout>
     <Navigation/>
     <Border/>

@@ -12,6 +12,7 @@ import styled from "styled-components";
 import GlobalStyles from '../../shared/globalStyles';
 
 import 'typeface-roboto';
+import PageMeta from '../page-meta';
 
 const PageWrapper = styled.div`
   padding-top: ${ ({theme}) => theme.navHeight }px;
@@ -41,20 +42,11 @@ const PageLayout = ({ light = false, children }) => (
     render={data => (
       <ThemeProvider theme={light ? themeLight : theme}>
         <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
-
-          <html lang="en" />
-          </Helmet>
+          {/* <PageMeta title="Satellytes" {...this.props}/> */}
           <GlobalStyles />
 
           <Page>
-            <Header siteTitle={data.site.siteMetadata.title} />
+            <Header/>
             <PageWrapper>
               {children}
             </PageWrapper>

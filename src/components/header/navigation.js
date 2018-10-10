@@ -11,10 +11,6 @@ let items = [
   {title: "Blog", to:'/blog/', id: 3, partialMatch: true}
 ]
 
-items = items.filter(item => {
-  return !(item.to === '/blog/' && !process.env.BLOG_ENABLED);
-})
-
 const Bar = styled.div`
   height: 2px;
   background-color: ${({theme}) => theme.colors.light};

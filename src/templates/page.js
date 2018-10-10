@@ -8,10 +8,11 @@ import { HeadlineContent } from "../components/typography/headline";
 import Img from "gatsby-image"
 
 import { ContentFooter } from "../components/content-footer/content-footer";
+import PageMeta from "../components/page-meta";
 
-const Header = ({title}) => (
+const PageHeadline = ({title}) => (
   <header>
-   <HeadlineContent>{title}</HeadlineContent>
+    <HeadlineContent>{title}</HeadlineContent>
   </header>
 )
 
@@ -34,11 +35,13 @@ class PageTemplate extends React.Component {
     const page = this.props.data.contentfulPage
     return (
       <PageLayout light="true">
+        <PageMeta title={page.title} {...this.props}/>
+
         <article>
           <HeroImage image={page.heroImage}/>
           <Content>
             <Section>
-              <Header title={page.title} alt={page.title} />
+              <PageHeadline title={page.title} alt={page.title} />
               <MarkdownContentful markdown={page.body.childMarkdownRemark} />
               <ContentFooter
                 showShare={true}

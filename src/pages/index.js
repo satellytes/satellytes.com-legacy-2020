@@ -6,6 +6,7 @@ import SectionIntro from '../components/landingpage/section-intro';
 import SectionWhat from '../components/landingpage/section-what';
 import SectionWhy from '../components/landingpage/section-why';
 import SectionContact from '../components/landingpage/section-contact';
+import PageMeta from '../components/page-meta';
 
 
 class IndexPage extends React.Component {
@@ -14,6 +15,8 @@ class IndexPage extends React.Component {
 
     return (
       <PageLayout>
+        <PageMeta title='Welcome' {...this.props}/>
+
         <SectionIntro/>
         <SectionWhat/>
         <SectionWhy/>
