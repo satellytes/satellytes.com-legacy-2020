@@ -1,31 +1,18 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import PageLayout from "../components/layout/page-layout"
 import { graphql } from "gatsby"
-
 import { HeadlineContent } from '../components/typography/headline';
-import Img from "gatsby-image"
 import { Content, Section} from '../components/layout/layout';
-
 import ArticleFooter from '../components/blog/article-footer';
 import MarkdownContentful from '../components/typography/markdown-contentful';
-import DateInfo from '../components/content-footer/date-info';
-import Separator from '../components/content-footer/separator';
 import PageMeta from '../components/page-meta';
+import { HeroImage } from '../components/hero-image/hero-image';
 
 const Header = ({article}) => (
   <header>
     <HeadlineContent>{article.title}</HeadlineContent>
   </header>
-)
-
-const HeroImage = ({article}) => (
-  <Img
-      alt={article.title}
-      key={article.heroImage.src}
-      fluid={article.heroImage.fluid}
-    />
 )
 
 class BlogPostTemplate extends React.Component {
@@ -41,7 +28,7 @@ class BlogPostTemplate extends React.Component {
           title={article.title}/>
 
         <article>
-          <HeroImage article={article}/>
+        <HeroImage image={article.heroImage}/>
 
           <Content>
             <Section>
@@ -84,9 +71,7 @@ export const pageQuery = graphql`
       }
 
       heroImage {
-        fluid(maxWidth: 1180, maxHeight: 480){
-          ...GatsbyContentfulFluid
-        }
+        ...HeroImage
       }
 
       author {
