@@ -1,11 +1,7 @@
 const environment = process.env.NODE_ENV || 'production';
 const FULL_PREVIEW = false;
 
-console.log('deploy');
-console.log(JSON.stringify(process.env));
-
 let contentfulLoadedConfig = {};
-let contentfulConfig = {};
 
 try {
   // Load the Contentful config from the .contentful.json
@@ -18,20 +14,20 @@ require("dotenv").config({
 
 
 // Overwrite the Contentful config with environment variables if they exist
-contentfulConfig = {
+let contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulLoadedConfig.spaceId,
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulLoadedConfig.accessToken,
   host: process.env.CONTENTFUL_HOST || contentfulLoadedConfig.host
 }
 
-// include drafts from contentful
-if(FULL_PREVIEW) {
+// include drafts from contentful by changing host and token to the preview api
+if(process.env.FULL_PREVIEW) {
   contentfulConfig = {
+    ...contentfulConfig,
     accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN || contentfulLoadedConfig.previewAccessToken,
     host: process.env.CONTENTFUL_PREVIEW_HOST || contentfulLoadedConfig.previewHost
   }
 }
-
 
 const { spaceId, accessToken } = contentfulConfig
 
