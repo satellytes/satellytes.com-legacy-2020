@@ -82,6 +82,7 @@ export const pageQuery = graphql`
           htmlAst
         }
       }
+
       heroImage {
         fluid(maxWidth: 1180, maxHeight: 480){
           ...GatsbyContentfulFluid

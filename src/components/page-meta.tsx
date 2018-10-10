@@ -25,11 +25,25 @@ type ArticleData = {
   }
 };
 
+type PageData = {
+  title: string,
+  createdAt: string,
+  updatedAt: string,
+  heroImage: any,
+  body: {
+    childMarkdownRemark: {
+      excerpt: string;
+      htmlAst: any;
+    },
+  }
+};
+
 type PageMetaData = {
   title: string,
   description: string
   image: string
   article: ArticleData,
+  page: any;
   site: {
     siteMetadata: {
       siteUrl: string
@@ -72,6 +86,7 @@ const PageMeta = (data: PageMetaData) => {
   }
 
   const isArticle = !!data.article;
+  const isPage = !!data.page;
 
   const url = `${siteUrl}${data.location.pathname}`
 
@@ -81,6 +96,11 @@ const PageMeta = (data: PageMetaData) => {
   if(isArticle) {
     image = `https:${data.article.heroImage.fluid.src}`
     description = data.article.excerpt.childMarkdownRemark.excerpt;
+  } else if(isPage) {
+    if(data.page.heroImage) {
+      image = `https:${data.page.heroImage.fluid.src}`
+    }
+    description = data.page.body.childMarkdownRemark.excerpt;
   }
 
   const schemaOrgJSONLD = generateSchema(

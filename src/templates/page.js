@@ -35,7 +35,7 @@ class PageTemplate extends React.Component {
     const page = this.props.data.contentfulPage
     return (
       <PageLayout light="true">
-        <PageMeta title={page.title} {...this.props}/>
+        <PageMeta title={page.title} page={page} {...this.props}/>
 
         <article>
           <HeroImage image={page.heroImage}/>
@@ -75,6 +75,9 @@ export const pageQuery = graphql`
       body {
         childMarkdownRemark {
           htmlAst
+        }
+        childMarkdownRemark {
+          excerpt
         }
       }
 
