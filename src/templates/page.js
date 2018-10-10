@@ -1,3 +1,4 @@
+import position from 'polished/lib/shorthands/position';
 import React from "react"
 import PageLayout from "../components/layout/page-layout"
 import { graphql } from "gatsby"
@@ -9,6 +10,7 @@ import Img from "gatsby-image"
 
 import { ContentFooter } from "../components/content-footer/content-footer";
 import PageMeta from "../components/page-meta";
+import styled from "styled-components";
 
 const PageHeadline = ({title}) => (
   <header>
@@ -16,16 +18,35 @@ const PageHeadline = ({title}) => (
   </header>
 )
 
+const Credits = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  opacity: 0.5;
+`
 
-const HeroImage = ({image, alt}) => {
+const HeroImageLayer = styled.div`
+  position: relative;
+`
+const HeroImage = (data) => {
+  const { image, alt } = data;
+  console.log('data', data)
   if(!image) { return null }
 
   return (
-    <Img
-      alt={alt}
-      key={image.src}
-      fluid={image.fluid}
-    />
+    <HeroImageLayer>
+      <Img
+        alt={alt}
+        key={image.src}
+        fluid={image.fluid}
+      />
+      <Credits>
+        <a target='_blank' href={image.description}>{image.title}</a>
+      </Credits>
+    </HeroImageLayer>
   )
 };
 
@@ -42,7 +63,8 @@ class PageTemplate extends React.Component {
           <Content>
             <Section>
               <PageHeadline title={page.title} alt={page.title} />
-              <MarkdownContentful markdown={page.body.childMarkdownRemark} />
+              <MarkdownContentful
+                markdown={page.body.childMarkdownRemark} />
               <ContentFooter
                 showShare={true}
                 createdAt={page.createdAt}
@@ -55,7 +77,6 @@ class PageTemplate extends React.Component {
     )
   }
 }
-
 
 export default PageTemplate
 
@@ -82,7 +103,9 @@ export const pageQuery = graphql`
       }
 
       heroImage {
-        fluid(maxWidth: 1180, maxHeight: 480){
+        title,
+        description,
+        fluid(maxWidth: 2000, maxHeight: 600){
           ...GatsbyContentfulFluid
         }
       }

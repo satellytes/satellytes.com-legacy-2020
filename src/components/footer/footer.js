@@ -27,7 +27,7 @@ const Footer = () => (
     <SocialItems/>
 
     <Links>
-      <LinkItem to="/page/impressum">Impressum</LinkItem>
+      <LinkItem to="/page/imprint">Impressum</LinkItem>
       <LinkItem to="/page/privacy">Datenschutz</LinkItem>
     </Links>
 
