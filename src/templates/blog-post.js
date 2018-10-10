@@ -58,14 +58,10 @@ export const pageQuery = graphql`
       slug
       createdAt(formatString: "DD.MMM YYYY")
       updatedAt(formatString: "DD.MMM YYYY")
-      excerpt: description {
-        childMarkdownRemark {
-          excerpt
-        }
-      }
       body {
         childMarkdownRemark {
           htmlAst
+          excerpt
         }
       }
 

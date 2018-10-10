@@ -77,7 +77,6 @@ const config = {
   description: 'Satellytes ist eine Digital-Agentur, die um große Unternehmen kreist und ihnen bei der Transformation und Optimierung digitaler Services und Interfaces hilft.'
 }
 const PageMeta = (data: PageMetaData) => {
-  console.log('data', data)
   let title  = 'Satellytes';
   const siteUrl = data.site.siteMetadata.siteUrl
 
@@ -95,7 +94,7 @@ const PageMeta = (data: PageMetaData) => {
 
   if(isArticle) {
     image = `https:${data.article.heroImage.fluid.src}`
-    description = data.article.excerpt.childMarkdownRemark.excerpt;
+    description = data.article.body.childMarkdownRemark.excerpt;
   } else if(isPage) {
     if(data.page.heroImage) {
       image = `https:${data.page.heroImage.fluid.src}`

@@ -127,7 +127,6 @@ export class ContactForm extends React.Component {
   }
 
   handleChange = field => event => {
-    console.log('field', field,  { [field]: event.target.value})
     this.setState({ [field]: event.target.value});
   }
 

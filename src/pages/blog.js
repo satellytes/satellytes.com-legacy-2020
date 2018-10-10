@@ -46,16 +46,17 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
           title
           slug
           createdAt(formatString: "DD.MMM YYYY")
           updatedAt(formatString: "DD.MMM YYYY")
-          description {
+          body {
             childMarkdownRemark {
               htmlAst
+              excerpt
             }
           }
           heroImage {

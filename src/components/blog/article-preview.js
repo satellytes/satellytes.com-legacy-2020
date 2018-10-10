@@ -4,18 +4,7 @@ import Img from "gatsby-image"
 import styled from 'styled-components';
 // import breakpoint from 'styled-components-breakpoint';
 import {HeadlineContent} from '../typography/headline';
-import Copy from '../typography/copy';
-
-import rehypeReact from "rehype-react"
 import { ContentFooter } from '../content-footer/content-footer';
-
-
-
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: { "p": Copy }
-}).Compiler
-
 
 const Layout = styled.div`
   margin-bottom: 40px;
@@ -62,11 +51,11 @@ const Header = ({article}) => (
 const DescriptionLayout = styled.div`
   margin-bottom: 20px;
 `
-const Description = ({markdown, article}) => {
+const Description = ({article}) => {
   return (
   <DescriptionLayout>
     <Link to={`/blog/${article.slug}`}>
-    {renderAst(markdown.htmlAst)}
+    {article.body.childMarkdownRemark.excerpt}
     </Link>
   </DescriptionLayout>
   )
@@ -75,16 +64,13 @@ const Description = ({markdown, article}) => {
 
 export default (props) => {
   const {article} = props;
-  console.log({props});
 
   return (
   <Layout>
 
       <TeaserImage article={article}/>
       <Header article={article}/>
-      <Description
-        article={article}
-        markdown={article.description.childMarkdownRemark}/>
+      <Description article={article}/>
       <ContentFooter
         {...props}
         createdAt={article.updatedAt}

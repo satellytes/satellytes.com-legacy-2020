@@ -62,7 +62,6 @@ class NavigationItem extends React.Component {
 
   render() {
     const active = this.isActive();
-    console.log(this.props)
     return (
       <NavigationLink active={active}>
         <Link to={this.props.to}>{this.props.title}</Link>
