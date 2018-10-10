@@ -2,6 +2,7 @@ import path from 'path';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { withPrefix } from 'gatsby'
 
 type AuthorType = {
   name: string,
@@ -54,7 +55,7 @@ const generateSchema = (url: string, title: string) => {
 }
 
 
-const defaultShareImage = 'some-url';
+const defaultShareImage = withPrefix('/img/satellytes-share.png');
 
 const config = {
   twitterProfile: 'http://www.twitter.com/satellytes_beep',
@@ -64,6 +65,7 @@ const config = {
 const PageMeta = (data: PageMetaData) => {
   console.log('data', data)
   let title  = 'Satellytes';
+  const siteUrl = data.site.siteMetadata.siteUrl
 
   if(data.title) {
     title =  `${data.title} - Satellytes`;
@@ -71,10 +73,10 @@ const PageMeta = (data: PageMetaData) => {
 
   const isArticle = !!data.article;
 
-  const url = `${data.site.siteMetadata.siteUrl}${data.location.pathname}`
+  const url = `${siteUrl}${data.location.pathname}`
 
   let description = data.description || config.description;
-  let image = data.image || defaultShareImage;
+  let image = data.image || `${siteUrl}${defaultShareImage}`;
 
   if(isArticle) {
     image = `https:${data.article.heroImage.fluid.src}`
