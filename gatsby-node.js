@@ -24,9 +24,9 @@ const QUERY_BLOG = `
       node {
         title
         slug
-        description {
+        body {
           childMarkdownRemark {
-            html
+            excerpt
           }
         }
       }
