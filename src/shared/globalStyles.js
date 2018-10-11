@@ -1,5 +1,6 @@
 import * as fonts from './fonts';
 import { createGlobalStyle } from 'styled-components';
+import './prism-satellytes.css';
 
 const GlobalStyles = createGlobalStyle`
 

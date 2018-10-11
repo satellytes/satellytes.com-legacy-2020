@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 
-require("prism-themes/themes/prism-duotone-dark.css")
+// require("prism-themes/themes/prism-duotone-dark.css")

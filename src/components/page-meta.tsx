@@ -93,11 +93,11 @@ const PageMeta = (data: PageMetaData) => {
   let image = data.image || `${siteUrl}${defaultShareImage}`;
 
   if(isArticle) {
-    image = `https:${data.article.heroImage.fluid.src}`
+    image = `https:${data.article.heroImage.share.src}`
     description = data.article.body.childMarkdownRemark.excerpt;
   } else if(isPage) {
     if(data.page.heroImage) {
-      image = `https:${data.page.heroImage.fluid.src}`
+      image = `https:${data.page.heroImage.share.src}`
     }
     description = data.page.body.childMarkdownRemark.excerpt;
   }

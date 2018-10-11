@@ -11,6 +11,10 @@ export const HERO_IMAGE_FRAGMENT = graphql`
     fluid(maxWidth: 2000, maxHeight: 600){
       ...GatsbyContentfulFluid
     }
+
+    share:resize(width: 2000, height: 1000){
+      src
+    }
   }
 `
 const CreditStyles = styled.span`
@@ -27,7 +31,9 @@ const Credits = ({title, url}) => {
 
   return (
     <CreditStyles>
-      <a target='_blank' href={url} rel="noopener noreferrer">{title}</a>
+      {
+        url ? <a target='_blank' href={url} rel="noopener noreferrer">{title}</a> : title
+      }
     </CreditStyles>
   )
 };
