@@ -69,15 +69,7 @@ export const pageQuery = graphql`
         ...HeroImage
       }
 
-      author {
-        name
-        role
-        image {
-          fixed(width: 55, height: 55){
-            ...GatsbyContentfulFixed
-          }
-        }
-      }
+      ...BlogPostAuthor
     }
   }
 `

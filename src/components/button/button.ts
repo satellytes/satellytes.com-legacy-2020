@@ -33,18 +33,5 @@ const Button = styled.button`
     background-color: ${ ({theme}) => rgba(theme.colors.light, 0.5) };
     pointer-events: none;
   }
-
-
-  ${({inline}:ButtonType) => inline && css`
-    width: auto;
-    font-size: inherit;
-    display: inline-block;
-    line-height:  3rem;
-    padding: 0 10px;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  `}
 `
 export default Button;

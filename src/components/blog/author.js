@@ -58,10 +58,27 @@ const LinksLayout = styled.div`
   margin-top: 10px;
 `
 
-const Links = () => (
+
+const Link = styled.a`
+  font-family: ${ ({theme}) => theme.fontFamily.roboto };
+  font-weight: ${ ({theme}) => theme.fontWeight.bold };
+  border: 2px solid ${ ({theme}) => theme.colors.light };
+  color: ${ ({theme}) => theme.colors.light };
+  padding: 6px 10px;
+  border-radius: 5px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background-color: ${ ({theme}) => theme.colors.light };
+    color: ${ ({theme}) => theme.colors.white };
+  }
+`
+const Links = ({xing, email}) => (
   <LinksLayout>
-    <Button inline>Profil</Button>
-    <Button inline>Kontakt</Button>
+    <Link target="_blank" rel="noopener noreferrer" href={xing}>Profil</Link>
+    <Link href={`mailto:${email}`}>Kontakt</Link>
   </LinksLayout>
 );
 
@@ -71,7 +88,8 @@ const Author = ({author}) => (
     <Image author={author}/>
     <Name>{author.name}</Name>
     <Role>{author.role}</Role>
-    <Links/>
+
+    <Links {...author} />
   </AuthorLayout>
 
 )

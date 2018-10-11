@@ -37,6 +37,10 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   background: #202840;
 }
 
+/* Inline Code Block */
+code.language-text {
+}
+
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
