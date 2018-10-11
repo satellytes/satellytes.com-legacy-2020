@@ -43,6 +43,12 @@ export const theme = {
   navigation: {
     background: '#202840',
     foreground: '#ffffff'
+  },
+
+  button: {
+    background: '#5CCFE6',
+    color: '#282C59',
+    backgroundHover: '#80EAFF'
   }
 };
 

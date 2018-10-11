@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { HeadlineParagraph } from '../typography/headline';
 import Img from "gatsby-image"
+import Button from '../button/button';
 
 const ImageRound = styled(Img)`
   border-radius: 50%;
@@ -46,20 +47,21 @@ const BoxTitle = styled(HeadlineParagraph)`
   grid-area: title;
 `
 
-const Button = styled.button`
-  font-family: ${ ({theme}) => theme.fontFamily.roboto };
-  font-weight: ${ ({theme}) => theme.fontWeight.bold };
-  background-color:${ ({theme}) => theme.colors.dark };
-`
+// const Button = styled.button`
+//   font-family: ${ ({theme}) => theme.fontFamily.roboto };
+//   font-weight: ${ ({theme}) => theme.fontWeight.bold };
+//   background-color:${ ({theme}) => theme.colors.dark };
+// `
 
 const LinksLayout = styled.div`
   grid-area: contact;
+  margin-top: 10px;
 `
 
 const Links = () => (
   <LinksLayout>
-    <Button>Profil</Button>
-    <Button>Kontakt</Button>
+    <Button inline>Profil</Button>
+    <Button inline>Kontakt</Button>
   </LinksLayout>
 );
 
