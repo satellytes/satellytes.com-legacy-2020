@@ -69,7 +69,9 @@ export const pageQuery = graphql`
         ...HeroImage
       }
 
-      ...BlogPostAuthor
+      author {
+        ...BlogPostAuthor
+      }
     }
   }
 `

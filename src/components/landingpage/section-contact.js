@@ -1,6 +1,6 @@
 import React from 'react'
 import {ContactForm} from './../contact-form/contact-form';
-import Events from './events';
+import Events from './../events/events';
 import { Content, Section, Grid, Column } from '../layout/layout';
 import Copy from '../typography/copy';
 import { HeadlineContent } from '../typography/headline';

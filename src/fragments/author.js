@@ -1,8 +1,7 @@
 
 export const AUTHOR_POST_FRAGEMENT = graphql`
-fragment BlogPostAuthor on ContentfulBlogPost {
-  author {
-    name
+fragment BlogPostAuthor on ContentfulPeople {
+  name
     email
     xing
     role
@@ -11,6 +10,5 @@ fragment BlogPostAuthor on ContentfulBlogPost {
         ...GatsbyContentfulFixed
       }
     }
-  }
 }
 `
