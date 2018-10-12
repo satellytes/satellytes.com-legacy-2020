@@ -54,8 +54,6 @@ const Planet = styled.div`
 
   /* outline: 1px solid red; */
 
-  background-color: white;
-  border-radius: 50%;
 
   height: ${mobilePlanet.diameter};
   width: ${mobilePlanet.diameter};
@@ -73,18 +71,6 @@ const Planet = styled.div`
 
 
 `
-
-// &:after {
-//   content: '';
-//   width: 5px;
-//   height: 5px;
-//   background: red;
-//   transform: translate(-50%, -50%);
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   z-index: 1;
-// }
 
 
 const orbitAnimationDesktop = keyframes`
@@ -145,11 +131,16 @@ const Orbiter = styled.div`
     }
   `}
 `
-
+const PlanetShape = () => (
+  <svg height="100%" width="100%" viewBox="-1 -1 2 2">
+    <circle cx="0" cy="0" r="1" fill="white" />
+  </svg>
+)
 
 const Orbit = () => (
   <Universe>
     <Planet>
+      <PlanetShape/>
       <Orbiter/>
     </Planet>
   </Universe>
