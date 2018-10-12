@@ -7,7 +7,6 @@ import Orbit from './orbit';
 const mobileHeader = 60;
 
 const SectionLayout = styled.div`
-  height: calc(100vh - ${mobileHeader}px);
 
   display: flex;
   align-items: flex-start;
