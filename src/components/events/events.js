@@ -50,8 +50,8 @@ const Events = ({events}) => {
                 title
                 link
                 tagline
-                dateShort: date(formatString: "MMM DD")
-                dateTitle: date(formatString: "MMM DD, YYYY")
+                dateShort: date(locale: "DE", formatString: "MMM DD")
+                dateTitle: date(locale: "DE", formatString: "MMM DD, YYYY")
                 date
               }
             }
