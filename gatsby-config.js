@@ -58,7 +58,12 @@ module.exports = {
         icon: 'src/images/satellytes-icon.png', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        navigateFallbackWhitelist: []
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
