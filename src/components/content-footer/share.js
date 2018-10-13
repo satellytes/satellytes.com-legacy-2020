@@ -1,4 +1,4 @@
-import {EmailShareButton, WhatsappShareButton, TwitterShareButton} from 'react-share';
+import {EmailShareButton, WhatsappShareButton, TwitterShareButton, FacebookShareButton} from 'react-share';
 import React from "react";
 import IconTwitter2 from '../../assets/svg/icon-twitter2.svg';
 import IconMail from '../../assets/svg/icon-mail.svg';
@@ -41,9 +41,9 @@ export const Share = ({location, data}) => {
         </ShareButton>
 
         <ShareButton>
-          <IconFacebook url={url}>
+          <FacebookShareButton url={url}>
             <IconFacebook/>
-          </IconFacebook>
+          </FacebookShareButton>
         </ShareButton>
 
         <ShareButton>
