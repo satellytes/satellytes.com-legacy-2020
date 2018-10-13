@@ -3,7 +3,9 @@ import { STAR_COORDS } from './star-coords';
 import styled from 'styled-components';
 import { MeteorShower } from './meteor-shower';
 import { TwinkleStars } from './twinkle-stars';
-import * as basicScroll from 'basicscroll'
+
+import * as basicScroll from './basicScroll'
+
 
 const Layout = styled.div`
   position: fixed;

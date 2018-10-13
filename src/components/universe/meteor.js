@@ -60,7 +60,7 @@ export class Meteor extends React.Component {
     clearTimeout(this.animationTickTimeout);
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     // This will allow the animation to restart
     // The flag will quickly switch from false to true
     // we can safely remove and add the animation (see MeteorShape)

@@ -36,7 +36,7 @@ export class MeteorShower extends React.Component {
     const availableCount = METEOR_DATA.length;
     let newIndex = Math.round(Math.random()*availableCount);
 
-    if(newIndex == this.state.activeMeteorIndex) {
+    if(newIndex === this.state.activeMeteorIndex) {
       newIndex = (newIndex + 1)%availableCount;
     }
 
