@@ -25,7 +25,7 @@ const distributeEvents = (edges, minFutureEvents) => {
   }, { past:[], future: []})
 
 
-  const {past, future} = splitList;
+  let {past, future} = splitList;
 
   if(future.length < minFutureEvents) {
     const fillFromPast = past.reverse().slice(0, minFutureEvents - future.length).reverse();

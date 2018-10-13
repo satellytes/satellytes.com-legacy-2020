@@ -4,8 +4,6 @@ import styled, {keyframes} from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Orbit from './orbit';
 
-const mobileHeader = 60;
-
 const SectionLayout = styled.div`
 
   display: flex;
@@ -18,8 +16,6 @@ const SectionLayout = styled.div`
   `}
 
 `;
-
-
 
 const scaleInLogo = keyframes`
   from {

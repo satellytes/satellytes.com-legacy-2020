@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { HeadlineParagraph } from '../typography/headline';
 import Img from "gatsby-image"
-import Button from '../button/button';
 
 const ImageRound = styled(Img)`
   border-radius: 50%;
