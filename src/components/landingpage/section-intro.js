@@ -3,6 +3,7 @@ import IntroSVG from './../../assets/svg/intro.svg';
 import styled, {keyframes} from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Orbit from './orbit';
+import Universe from '../universe/universe';
 
 const SectionLayout = styled.div`
 
@@ -51,6 +52,8 @@ class SectionIntro extends React.Component {
         <SatellytesSVGLogo
         preserveAspectRatio="xMidYMid slice"
         viewBox="0 0 200 200">{IntroSVG()}</SatellytesSVGLogo>
+
+        <Universe/>
 
       </SectionLayout>
     )

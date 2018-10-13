@@ -42,7 +42,7 @@ const Link = styled.a`
   color: ${ ({theme}) => theme.colors.light };
   font-weight: ${ ({theme}) => theme.fontWeight.bold };
   font-size: 1.5rem;
-  display: block;
+  display: inline-block;
   text-decoration: none;
 `
 
