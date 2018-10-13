@@ -56,8 +56,8 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       slug
-      createdAt(formatString: "DD.MMM YYYY")
-      updatedAt(formatString: "DD.MMM YYYY")
+      createdAt(locale: "de", formatString: "DD.MMM YYYY")
+      updatedAt(locale: "de", formatString: "DD.MMM YYYY")
       body {
         childMarkdownRemark {
           htmlAst

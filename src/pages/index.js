@@ -7,6 +7,7 @@ import SectionWhat from '../components/landingpage/section-what';
 import SectionWhy from '../components/landingpage/section-why';
 import SectionContact from '../components/landingpage/section-contact';
 import PageMeta from '../components/page-meta';
+import { graphql } from 'gatsby';
 
 
 class IndexPage extends React.Component {

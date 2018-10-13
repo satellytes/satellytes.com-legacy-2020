@@ -57,9 +57,9 @@ export const pageQuery = graphql`
     contentfulPage(id: { eq: $id }) {
       title
       shareable
+      createdAt(locale: "de", formatString: "DD.MMM YYYY")
+      updatedAt(locale: "de", formatString: "DD.MMM YYYY")
 
-      createdAt(formatString: "DD.MMM YYYY")
-      updatedAt(formatString: "DD.MMM YYYY")
       body {
         childMarkdownRemark {
           htmlAst

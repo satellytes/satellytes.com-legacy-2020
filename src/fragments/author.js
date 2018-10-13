@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 
 export const AUTHOR_POST_FRAGEMENT = graphql`
 fragment BlogPostAuthor on ContentfulPeople {

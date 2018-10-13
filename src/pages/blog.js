@@ -51,22 +51,17 @@ export const pageQuery = graphql`
         node {
           title
           slug
-          createdAt(formatString: "DD.MMM YYYY")
-          updatedAt(formatString: "DD.MMM YYYY")
+          createdAt(locale: "de", formatString: "DD.MMM YYYY")
+          updatedAt(locale: "de", formatString: "DD.MMM YYYY")
+
           body {
             childMarkdownRemark {
-              htmlAst
               excerpt
             }
           }
+
           heroImage {
-            fluid(maxWidth: 600, maxHeight: 200){
-              ...GatsbyContentfulFluid
-            }
-            fluidTraced: fluid(maxWidth: 1200, maxHeight: 400)
-            {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
+            ...HeroImage
           }
         }
       }
