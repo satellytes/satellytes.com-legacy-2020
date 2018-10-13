@@ -26,10 +26,14 @@ class Universe extends React.Component {
   constructor(props){
     super(props);
     this.myRef = React.createRef();
-
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.state = {
+      debug: false
+    }
   }
   componentWillUnmount() {
-    this.baseScrollInstance.destroy()
+    this.baseScrollInstance.destroy();
+    document.removeEventListener('keydown', this.handleKeyDown)
   }
 
   componentDidMount() {
@@ -48,16 +52,28 @@ class Universe extends React.Component {
     });
 
     this.baseScrollInstance.start();
+    document.addEventListener('keydown', this.handleKeyDown)
+  }
+
+  handleKeyDown(event) {
+    if(event.altKey && event.keyCode === 68) {
+      this.setState({
+        debug: !this.state.debug
+      })
+      event.preventDefault();
+    }
   }
 
   render() {
     return (
       <Layout
+        onKeyDown={this.keyDown}
+        onKeyUp={this.keyUp}
         ref={this.myRef}>
         {/* <svg viewBox="0 0 2000 1000" width="2000" height="1000"> */}
         <svg viewBox="0 0 2000 1000" width="100%" height="100%" preserveAspectRatio="xMinYMin slice">
-          <TwinkleStars stars={STAR_COORDS.slice(0, 20)} debug={false} />
-          <MeteorShower debug={false} />
+          <TwinkleStars stars={STAR_COORDS.slice(0, 20)} debug={this.state.debug} />
+          <MeteorShower debug={this.state.debug} />
         </svg>
       </Layout>
     )
