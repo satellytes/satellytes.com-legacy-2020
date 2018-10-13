@@ -19,10 +19,10 @@ const PageWrapper = styled.div`
 `
 
 const Page = styled.div`
-  /* min-height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch; */
+  align-items: stretch;
 `
 
 const PageLayout = ({ light = false, children }) => (
