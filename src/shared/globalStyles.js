@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body, #___gatsby, #___gatsby > div {
-    height: 100%;
+    /* height: 100%; */
   }
 
   * {

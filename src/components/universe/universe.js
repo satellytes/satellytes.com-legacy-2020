@@ -19,29 +19,33 @@ const Layout = styled.div`
 
 
 class Universe extends React.Component {
+  baseScrollInstance = null;
+
   constructor(props){
     super(props);
     this.myRef = React.createRef();
 
   }
+  componentWillUnmount() {
+    this.baseScrollInstance.destroy()
+  }
 
   componentDidMount() {
-    let root = document.documentElement;
+    const totalHeight = document.documentElement.scrollHeight;
 
-    const instance = basicScroll.create({
+    this.baseScrollInstance = basicScroll.create({
       elem: this.myRef.current,
       from: 0,
-		  to: 5600,
+		  to: totalHeight,
       props: {
         '--translateScrollY': {
           from: 0,
           to: 1
         }
       }
-    })
+    });
 
-    instance.start()
-
+    this.baseScrollInstance.start();
   }
 
   render() {
