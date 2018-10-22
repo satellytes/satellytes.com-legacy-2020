@@ -6,7 +6,7 @@ import Orbit from './orbit';
 import Universe from '../universe/universe';
 
 const SectionLayout = styled.div`
-
+  pointer-events: none;
   display: flex;
   align-items: flex-start;
   justify-content: center;
