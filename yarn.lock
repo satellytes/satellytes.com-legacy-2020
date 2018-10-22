@@ -768,6 +768,18 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@satellytes/effect-factory@^1.1.0-rc.0":
+  version "1.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-factory/-/effect-factory-1.1.0-rc.0.tgz#8fe38a69c29f8bdeac6e1ca6f114c0e0e7a08245"
+
+"@satellytes/effect-star-wars@^1.1.0-rc.0":
+  version "1.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-star-wars/-/effect-star-wars-1.1.0-rc.0.tgz#0429cee721bce4a5cfd08cf3469933c952ee91d0"
+
+"@satellytes/effect-svg-perlin-noise@^1.1.0-rc.0":
+  version "1.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-svg-perlin-noise/-/effect-svg-perlin-noise-1.1.0-rc.0.tgz#824ea4703329f6375b24664ac1de17589963c40f"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"

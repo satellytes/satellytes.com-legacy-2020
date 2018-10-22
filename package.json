@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Georgios Kaleadis <georgios.kaleadis@satellytes.com>",
   "dependencies": {
+    "@satellytes/effect-factory": "^1.1.0-rc.0",
+    "@satellytes/effect-star-wars": "^1.1.0-rc.0",
+    "@satellytes/effect-svg-perlin-noise": "^1.1.0-rc.0",
     "@types/react-helmet": "5.0.7",
     "@types/styled-components": "4.1.4",
     "babel-plugin-styled-components": "1.9.3",

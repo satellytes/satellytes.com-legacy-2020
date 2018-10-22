@@ -1,0 +1,3 @@
+# ignore this paths as it's symlinked durign development
+# and eslint don't recognized it's part of node_modules actually.
+**/satellytes-effects/dist/*
