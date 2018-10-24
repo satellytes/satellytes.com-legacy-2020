@@ -7,7 +7,7 @@ import { Location } from '@reach/router';
 
 let items = [
   {title: "Home", to: '/', id: 1},
-  {title: "Career", to:'/page/career/', id: 2},
+  {title: "Karriere", to:'/page/career/', id: 2},
   {title: "Blog", to:'/blog/', id: 3, partialMatch: true}
 ]
 
