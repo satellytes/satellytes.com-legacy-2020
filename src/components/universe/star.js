@@ -60,7 +60,7 @@ export const Star = ({x, y, animationOffset, duration, brightness, depth = 1, de
   <g transform={`translate(${x} ${y})`}>
     <ParallaxLayer depth={depth*depthSeparation + 1}>
       <StarShape
-        cx="0" cy="0" r={debug ? 10 : 1}
+        cx="0" cy="0" r={debug ? 10 : 3}
         fill={debug ? mapDepthToColor(depth) : 'white'}
         animationOffset={`${-1 * animationOffset.toFixed(2)}ms`}
         duration={`${duration.toFixed(2)}ms`}

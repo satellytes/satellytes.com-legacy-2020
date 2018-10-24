@@ -16,6 +16,38 @@ const Header = ({article}) => (
 )
 
 class BlogPostTemplate extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      'codepen': false
+    };
+  }
+
+  componentDidMount() {
+    // Add Codepen script to <body> if we detect a Codepen embed
+    const codepen = document.getElementsByClassName('codepen');
+    if (codepen.length > 0) {
+      // Check if we've already embedded the script
+      if (!document.getElementById('codepen-script') || !this.state.codepen) {
+        // Create script element with Codepen embed JS lib
+        const s = document.createElement('script')
+        s.async = s.defer = true
+        s.src = `//static.codepen.io/assets/embed/ei.js`
+        s.id = 'codepen-script'
+        const body = document.body
+        if (body) {
+          body.appendChild(s)
+        }
+
+        // Set state to true so the process doesn't run again
+        this.setState({
+          'codepen': true
+        });
+      }
+    }
+  }
+
   render() {
     const article = get(this.props, 'data.contentfulBlogPost')
 
