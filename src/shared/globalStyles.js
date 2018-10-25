@@ -31,7 +31,6 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 600;
     font-style: normal;
   }
-
   html {
     font-size: ${10/16 * 100}%;
   }
@@ -70,6 +69,11 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  /* Code Pen Wrapper */
+  .cp_embed_wrapper {
+    margin-bottom: 20px;
+  }
+
 `
 
 export default GlobalStyles;
