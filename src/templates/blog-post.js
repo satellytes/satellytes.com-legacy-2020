@@ -97,6 +97,10 @@ export const pageQuery = graphql`
         }
       }
 
+      category {
+        name
+      }
+
       heroImage {
         ...HeroImage
       }

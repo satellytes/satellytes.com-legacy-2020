@@ -10,7 +10,7 @@ const Layout = styled.div`
   margin-bottom: 40px;
 `
 
-const Category = styled.span`
+const Category = styled.div`
   font-family: ${ ({theme}) => theme.fontFamily.roboto };
   font-weight: ${ ({theme}) => theme.fontWeight.bold };
   color: ${ ({theme}) => theme.colors.light};
@@ -40,7 +40,13 @@ const HeaderLayout = styled.header`
 const Header = ({article}) => (
   <HeaderLayout>
     <Link to={`/blog/${article.slug}`}>
-      <Category>UX/UI</Category>
+
+        {
+          article.category ?
+            <Category>
+              {article.category.map(({name}) => name).join(', ')}
+            </Category>  : null
+        }
       <HeadlineContent>
         {article.title}
       </HeadlineContent>
@@ -52,6 +58,8 @@ const DescriptionLayout = styled.div`
   margin-bottom: 20px;
 `
 const Description = ({article}) => {
+  console.log(article);
+
   return (
   <DescriptionLayout>
     <Link to={`/blog/${article.slug}`}>

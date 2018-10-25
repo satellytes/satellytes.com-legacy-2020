@@ -89,7 +89,7 @@ export class Meteor extends React.Component {
           stroke="red"  strokeWidth="1" fill="none"/>) : null }
 
         <Orbit>
-          <MeteorShape animationReset={animationReset} cx="0" cy="0" r={debug ? 10 : 3} radius={radius} reverse={reverse}/>
+          <MeteorShape animationReset={animationReset} cx="0" cy="0" r={debug ? 10 : 1} radius={radius} reverse={reverse}/>
         </Orbit>
       </g>
     )

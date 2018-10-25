@@ -51,6 +51,10 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          category {
+            name
+          }
+
           createdAt(locale: "de", formatString: "DD.MMM YYYY")
           updatedAt(locale: "de", formatString: "DD.MMM YYYY")
 
