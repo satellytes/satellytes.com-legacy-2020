@@ -40,7 +40,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Satellytes',
-    siteUrl: process.env.DEPLOY_PRIME_URL || "https://www.satellytes.com"
+    siteUrl: process.env.URL || process.env.DEPLOY_PRIME_URL || "https://www.satellytes.com"
   },
   plugins: [
     `gatsby-plugin-typescript`,
