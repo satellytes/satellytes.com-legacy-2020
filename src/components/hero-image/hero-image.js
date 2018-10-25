@@ -10,7 +10,9 @@ const CreditStyles = styled.span`
   color: white;
   font-size: 1rem;
   opacity: 0.5;
+  padding: 0.1em 0.4em;
 `
+
 const Credits = ({title, url}) => {
   if(!title) { return null }
 
