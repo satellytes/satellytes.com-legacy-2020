@@ -58,8 +58,6 @@ const DescriptionLayout = styled.div`
   margin-bottom: 20px;
 `
 const Description = ({article}) => {
-  console.log(article);
-
   return (
   <DescriptionLayout>
     <Link to={`/blog/${article.slug}`}>
