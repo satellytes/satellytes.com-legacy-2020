@@ -4,14 +4,22 @@ import { EffectFactory } from '@satellytes/effect-factory';
 // about the package being loaded during compile name. So no plain
 // list of package name strings possible.
 
-async function perlinNoise() {
-  const Effect = await import('@satellytes/effect-star-wars');
-  return Effect;
+type EffectWithOptions = {
+  effect: any,
+  options?: any,
+}
+async function perlinNoise():Promise<EffectWithOptions> {
+  const effect = await import('@satellytes/effect-svg-perlin-noise');
+  return {effect};
 }
 
-async function starWars() {
-  const Effect = await import('@satellytes/effect-svg-perlin-noise');
-  return Effect;
+async function starWars():Promise<EffectWithOptions> {
+  const effect = await import('@satellytes/effect-star-wars');
+  const options = {
+    duration: 20000
+  }
+
+  return {effect, options};
 }
 
 const availableEffects = [starWars, perlinNoise];
@@ -36,6 +44,7 @@ async function nextEffect() {
 
 export async function run() {
   const scrollContainer = <any>document.querySelector('.satellytes-scroll-container');
-  const effect = await nextEffect();
-  EffectFactory.run(effect, {element: scrollContainer});
+  const {effect, options } = await nextEffect();
+
+  EffectFactory.run(effect, {element: scrollContainer, ...options});
 }
