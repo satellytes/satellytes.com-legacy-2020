@@ -769,16 +769,16 @@
     warning "^3.0.0"
 
 "@satellytes/effect-factory@^1.1.0-rc.0":
-  version "1.1.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@satellytes/effect-factory/-/effect-factory-1.1.0-rc.0.tgz#8fe38a69c29f8bdeac6e1ca6f114c0e0e7a08245"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-factory/-/effect-factory-1.1.0.tgz#7a26930d9e57cd2489e992030085801acec399ac"
 
 "@satellytes/effect-star-wars@^1.1.0-rc.0":
-  version "1.1.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@satellytes/effect-star-wars/-/effect-star-wars-1.1.0-rc.0.tgz#0429cee721bce4a5cfd08cf3469933c952ee91d0"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-star-wars/-/effect-star-wars-1.1.0.tgz#0faf085e0a3c395c6259add9ce8131107aa5c74d"
 
 "@satellytes/effect-svg-perlin-noise@^1.1.0-rc.0":
-  version "1.1.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@satellytes/effect-svg-perlin-noise/-/effect-svg-perlin-noise-1.1.0-rc.0.tgz#824ea4703329f6375b24664ac1de17589963c40f"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@satellytes/effect-svg-perlin-noise/-/effect-svg-perlin-noise-1.1.0.tgz#a479a6326ac528258f651de1d37f8a622e03dcc3"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -1156,8 +1156,8 @@ apollo-link@^1.2.2:
     zen-observable-ts "^0.8.10"
 
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.1:
-  version "1.0.23"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.23.tgz#9416e5da31cc8d9d46502de6f90aa1447cd368c6"
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.24.tgz#77d2d3008bb9ee52aa76b799ce7a8d6cb6cf8a1c"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
 
@@ -2877,7 +2877,7 @@ core-js@2.6.0:
 
 core-js@^1.0.0:
   version "1.2.7"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+  resolved "http://registry.npmjs.org/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
   version "2.5.7"
@@ -4396,7 +4396,7 @@ fancy-log@^1.1.0:
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz#c053477817c86b51daa853c81e059b733d023614"
+  resolved "http://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz#c053477817c86b51daa853c81e059b733d023614"
 
 fast-deep-equal@^2.0.1:
   version "2.0.1"
@@ -9414,7 +9414,7 @@ registry-url@^3.0.3:
 
 regjsgen@^0.2.0:
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/regjsgen/-/regjsgen-0.2.0.tgz#6c016adeac554f75823fe37ac05b92d5a4edb1f7"
+  resolved "http://registry.npmjs.org/regjsgen/-/regjsgen-0.2.0.tgz#6c016adeac554f75823fe37ac05b92d5a4edb1f7"
 
 regjsgen@^0.4.0:
   version "0.4.0"
@@ -9717,7 +9717,7 @@ safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, s
 
 safe-regex@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/safe-regex/-/safe-regex-1.1.0.tgz#40a3669f3b077d1e943d44629e157dd48023bf2e"
+  resolved "http://registry.npmjs.org/safe-regex/-/safe-regex-1.1.0.tgz#40a3669f3b077d1e943d44629e157dd48023bf2e"
   dependencies:
     ret "~0.1.10"
 
@@ -10706,8 +10706,8 @@ terser-webpack-plugin@^1.0.2:
     worker-farm "^1.5.2"
 
 terser@^3.8.1:
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-3.10.2.tgz#a61d2c97065f9fdc8c49a18655e2a80ca7298a94"
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-3.10.3.tgz#4085f9e62171ca746c5759fe955d921291703ee6"
   dependencies:
     commander "~2.17.1"
     source-map "~0.6.1"
@@ -10972,8 +10972,8 @@ typescript@3.2.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
 
 ua-parser-js@^0.7.18:
-  version "0.7.18"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.18.tgz#a7bfd92f56edfb117083b69e31d2aa8882d4b1ed"
+  version "0.7.19"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
 
 uglify-es@^3.3.4:
   version "3.3.9"
