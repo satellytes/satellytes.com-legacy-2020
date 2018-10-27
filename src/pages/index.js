@@ -9,7 +9,6 @@ import SectionContact from '../components/landingpage/section-contact';
 import PageMeta from '../components/page-meta';
 import { graphql } from 'gatsby';
 
-
 class IndexPage extends React.Component {
   render() {
     const events = get(this, 'props.data.allContentfulEvents.edges')
@@ -17,7 +16,6 @@ class IndexPage extends React.Component {
     return (
       <PageLayout>
         <PageMeta title='Welcome' {...this.props}/>
-
         <SectionIntro/>
         <SectionWhat/>
         <SectionWhy/>

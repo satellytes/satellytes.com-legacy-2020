@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components';
 
 import SocialItems from './social';
+import { ExperimentTrigger } from '../experiments/experiment-trigger';
 
 const Links = styled.div`
   text-align: center;
@@ -30,6 +31,8 @@ const Footer = () => (
       <LinkItem to="/page/imprint">Impressum</LinkItem>
       <LinkItem to="/page/privacy">Datenschutz</LinkItem>
     </Links>
+
+    <ExperimentTrigger/>
 
   </Layout>
 )

@@ -42,7 +42,7 @@ const PageLayout = ({ light = false, children }) => (
           {/* <PageMeta title="Satellytes" {...this.props}/> */}
           <GlobalStyles />
 
-          <Page>
+          <Page className="satellytes-scroll-container">
             <Header/>
             <PageWrapper>
               {children}
