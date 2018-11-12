@@ -43,7 +43,7 @@
     "react-transition-group": "2.5.0",
     "react-waypoint": "8.0.3",
     "rehype-react": "3.0.3",
-    "styled-components": "4.0.3",
+    "styled-components": "4.1.0",
     "styled-components-breakpoint": "2.1.1",
     "typeface-roboto": "0.0.54",
     "yup": "0.26.6"
