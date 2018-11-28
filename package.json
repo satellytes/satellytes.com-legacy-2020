@@ -5,7 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@types/react-helmet": "5.0.7",
-    "@types/styled-components": "4.1.1",
+    "@types/styled-components": "4.1.2",
     "babel-plugin-styled-components": "1.9.1",
     "basicscroll": "3.0.0",
     "classnames": "2.2.6",
@@ -43,7 +43,7 @@
     "react-transition-group": "2.5.0",
     "react-waypoint": "8.1.0",
     "rehype-react": "3.1.0",
-    "styled-components": "4.1.1",
+    "styled-components": "4.1.2",
     "styled-components-breakpoint": "2.1.1",
     "typeface-roboto": "0.0.54",
     "yup": "0.26.6"
