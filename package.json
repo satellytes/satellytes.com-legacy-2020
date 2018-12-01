@@ -33,7 +33,7 @@
     "lodash.debounce": "4.0.8",
     "lodash.throttle": "4.1.1",
     "parse-unit": "1.0.1",
-    "polished": "2.3.0",
+    "polished": "2.3.1",
     "prism-themes": "1.0.1",
     "prismjs": "1.15.0",
     "react": "16.6.3",
