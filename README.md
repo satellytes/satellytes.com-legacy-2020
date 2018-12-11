@@ -1,5 +1,8 @@
-# Satellytes
-gatsby v2 & graphql + contentful
+# Satellytes Website
+Based on the [JamStack](https://jamstack.org/)
+by using Gatsby v2, GraphQL & Contentful.
+
+---
 
 ## Develop
 Provide the file `.contentful.json` to locally develop as follows. You will develop with the preview api locally to see all drafts too.
@@ -10,6 +13,8 @@ Provide the file `.contentful.json` to locally develop as follows. You will deve
 "previewHost": "preview.contentful.com"
 ```
 
+If you need to debug graphql you can enable the query watcher:
 
-## Tools
+```
 rm -r .cache/ ; env "NODE_ENV=development" "DEBUG=gatsby:query-watcher" npm run dev
+```
