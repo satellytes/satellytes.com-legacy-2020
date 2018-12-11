@@ -1,6 +1,4 @@
 const environment = process.env.NODE_ENV || 'production';
-const FULL_PREVIEW = false;
-
 let contentfulLoadedConfig = {};
 
 try {
@@ -20,8 +18,12 @@ let contentfulConfig = {
   host: process.env.CONTENTFUL_HOST || contentfulLoadedConfig.host
 }
 
-// include drafts from contentful by changing host and token to the preview api
-if(process.env.FULL_PREVIEW) {
+/**
+ * include drafts from contentful by changing host and token to the preview api
+ * this flag can be set locally (see env.development) or on netlify for a branch to easily create a staging environment
+ */
+
+ if(process.env.FULL_PREVIEW) {
   contentfulConfig = {
     ...contentfulConfig,
     accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN || contentfulLoadedConfig.previewAccessToken,
@@ -43,6 +45,7 @@ module.exports = {
     siteUrl: process.env.URL || process.env.DEPLOY_PRIME_URL || "https://www.satellytes.com"
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     `gatsby-plugin-typescript`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
