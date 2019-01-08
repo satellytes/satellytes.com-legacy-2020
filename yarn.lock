@@ -840,9 +840,9 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/styled-components@4.1.4":
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.4.tgz#c6915ccee4413da2e1e81b4df9d7ea5b97eb56aa"
+"@types/styled-components@4.1.5":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.5.tgz#6eca4dba53d167bd303d6555f57ebdccf1e061bf"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
