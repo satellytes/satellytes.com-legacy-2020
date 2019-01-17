@@ -59,7 +59,7 @@
     "prettier": "1.15.3",
     "tslint": "5.12.1",
     "tslint-react": "3.6.0",
-    "typescript": "3.2.2"
+    "typescript": "3.2.4"
   },
   "repository": {
     "type": "git",
