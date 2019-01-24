@@ -5118,9 +5118,9 @@ gatsby-plugin-typescript@2.0.3:
     "@babel/runtime" "^7.0.0"
     babel-plugin-remove-graphql-queries "^2.5.2"
 
-gatsby-react-router-scroll@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.2.tgz#d8046ce2f3bfa52ef6ec55804007d976b0bb6bef"
+gatsby-react-router-scroll@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.3.tgz#024885dbafc41666faad50038375098ca376c3a8"
   dependencies:
     "@babel/runtime" "^7.0.0"
     scroll-behavior "^0.9.9"
@@ -5224,9 +5224,9 @@ gatsby-transformer-sharp@2.1.10:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@2.0.93:
-  version "2.0.93"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.93.tgz#5657ae9edd7aa4b28c8e6d7386a9140226c1bc24"
+gatsby@2.0.94:
+  version "2.0.94"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.94.tgz#c1f6629d0d335fdf5392ba96b17e9b553e885739"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5283,7 +5283,7 @@ gatsby@2.0.93:
     gatsby-cli "^2.4.8"
     gatsby-link "^2.0.9"
     gatsby-plugin-page-creator "^2.0.5"
-    gatsby-react-router-scroll "^2.0.2"
+    gatsby-react-router-scroll "^2.0.3"
     glob "^7.1.1"
     graphql "^0.13.2"
     graphql-relay "^0.5.5"
