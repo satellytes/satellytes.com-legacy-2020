@@ -4986,9 +4986,9 @@ gatsby-cli@^2.4.8:
     yargs "^11.1.0"
     yurnalist "^1.0.2"
 
-gatsby-image@2.0.27:
-  version "2.0.27"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.27.tgz#2ac20c9c141dd012f8285c34cfbb040cbc60b3c0"
+gatsby-image@2.0.28:
+  version "2.0.28"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.28.tgz#368734f2976d4664bf46c014cfb7ae33baaaba7d"
   dependencies:
     "@babel/runtime" "^7.0.0"
     prop-types "^15.6.1"
@@ -5224,9 +5224,9 @@ gatsby-transformer-sharp@2.1.12:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@2.0.97:
-  version "2.0.97"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.97.tgz#46ccf0e3ed3d0a6340a5b88eeb0b2e66ed282df7"
+gatsby@2.0.98:
+  version "2.0.98"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.98.tgz#2f57ca467b4370e3e95cbdde45186430467cb1f6"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
