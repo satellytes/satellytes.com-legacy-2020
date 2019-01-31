@@ -5032,9 +5032,9 @@ gatsby-link@^2.0.9:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-plugin-manifest@2.0.15:
-  version "2.0.15"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.15.tgz#59a1f3fac9d5a38bf3895d4055311b07075c8fc7"
+gatsby-plugin-manifest@2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.16.tgz#dc1c8dc05c8b3720f3aa799810f21a190a0be1f4"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -5179,9 +5179,9 @@ gatsby-source-contentful@2.0.28:
     lodash "^4.17.10"
     qs "^6.4.0"
 
-gatsby-source-filesystem@2.0.18:
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.18.tgz#938b08cb9c78c5b48a37581dd5df27cef4b68843"
+gatsby-source-filesystem@2.0.19:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.19.tgz#1a6aadf601654310019dd8fbc5e76322561441c7"
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -5234,9 +5234,9 @@ gatsby-transformer-sharp@2.1.13:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@2.0.106:
-  version "2.0.106"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.106.tgz#e3a24a976dd36d5ef34b07b06ff5439ad83359b7"
+gatsby@2.0.107:
+  version "2.0.107"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.107.tgz#45a2e12fbc186a15a35ddf02f376c897e2496b44"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5324,7 +5324,6 @@ gatsby@2.0.106:
     null-loader "^0.1.1"
     opentracing "^0.14.3"
     optimize-css-assets-webpack-plugin "^5.0.1"
-    parse-filepath "^1.0.1"
     physical-cpu-count "^2.0.0"
     postcss-flexbugs-fixes "^3.0.0"
     postcss-loader "^2.1.3"
