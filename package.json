@@ -7,7 +7,7 @@
     "@types/react-helmet": "5.0.8",
     "@types/styled-components": "4.1.10",
     "babel-plugin-styled-components": "1.10.0",
-    "basicscroll": "3.0.1",
+    "basicscroll": "3.0.2",
     "classnames": "2.2.6",
     "eases": "1.0.8",
     "formik": "1.5.1",
