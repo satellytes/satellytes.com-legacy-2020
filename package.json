@@ -29,7 +29,7 @@
     "gatsby-source-contentful": "2.0.33",
     "gatsby-source-filesystem": "2.0.23",
     "gatsby-transformer-remark": "2.3.0",
-    "gatsby-transformer-sharp": "2.1.14",
+    "gatsby-transformer-sharp": "2.1.15",
     "lodash.debounce": "4.0.8",
     "lodash.throttle": "4.1.1",
     "parse-unit": "1.0.1",
