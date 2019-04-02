@@ -4886,9 +4886,9 @@ formik-persist@1.1.0:
     lodash.debounce "^4.0.8"
     react-fast-compare "^2.0.1"
 
-formik@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/formik/-/formik-1.5.1.tgz#ef5687e1ade5b1fe5f1d51435b422238aad107e9"
+formik@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-1.5.2.tgz#bb46853f10433f6f0a83415122c2a8e7e2e285fc"
   dependencies:
     create-react-context "^0.2.2"
     deepmerge "^2.1.1"
