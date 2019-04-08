@@ -11,7 +11,7 @@ const SectionContact = ({events}) => (
       <Grid>
         <Column>
           <HeadlineContent>Kontakt</HeadlineContent>
-          <Copy>Nutzen Sie unser Kontaktformular oder schreiben Sie uns eine E-Mail an</Copy>
+          <Copy>Nutzen Sie unser Kontaktformular oder schreiben Sie uns eine E-Mail: </Copy>
           <ContactForm/>
         </Column>
         <Column>
