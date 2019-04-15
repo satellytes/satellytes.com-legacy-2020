@@ -58,7 +58,7 @@
     "core-js": "2.6.5",
     "prettier": "1.17.0",
     "tslint": "5.13.1",
-    "tslint-react": "3.6.0",
+    "tslint-react": "4.0.0",
     "typescript": "3.4.3"
   },
   "repository": {
