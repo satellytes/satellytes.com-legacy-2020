@@ -5,7 +5,7 @@
   "author": "Georgios Kaleadis <georgios.kaleadis@satellytes.com>",
   "dependencies": {
     "@types/react-helmet": "5.0.8",
-    "@types/styled-components": "4.1.12",
+    "@types/styled-components": "4.1.14",
     "babel-plugin-styled-components": "1.10.0",
     "basicscroll": "3.0.2",
     "classnames": "2.2.6",
