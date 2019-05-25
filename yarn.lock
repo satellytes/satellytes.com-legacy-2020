@@ -8921,9 +8921,9 @@ pnp-webpack-plugin@^1.4.1:
   dependencies:
     ts-pnp "^1.0.0"
 
-polished@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.3.2.tgz#b0e0dfa2abaf6a5f378b674af829c747e6dcd763"
+polished@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.0.tgz#29b2a028ee0408df5dded55a2a25e913bc6749a9"
   dependencies:
     "@babel/runtime" "^7.4.4"
 
