@@ -5332,9 +5332,9 @@ gatsby-telemetry@^1.0.11:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
-gatsby-transformer-remark@2.3.12:
-  version "2.3.12"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.3.12.tgz#04ba4497a0f779582b19ad7c55d373609beaefeb"
+gatsby-transformer-remark@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.4.0.tgz#8a23269ce05ffcdddacc010b2fd2317caa9f27d7"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -5369,9 +5369,9 @@ gatsby-transformer-sharp@2.1.21:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@2.9.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.9.2.tgz#caab8b601a2e3e2ba47c486b39ea9a1079060cda"
+gatsby@2.9.4:
+  version "2.9.4"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.9.4.tgz#63efbf28d579bfe601e53908ebad712117355beb"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
