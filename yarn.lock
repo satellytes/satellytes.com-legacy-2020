@@ -5212,9 +5212,9 @@ gatsby-graphiql-explorer@^0.2.3:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-image@2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.8.tgz#edebdda1e4b823735693737d68855a7fb66cbde5"
+gatsby-image@2.2.9:
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.9.tgz#f4b89d9ca939591ab7aa20b43c3c82a2d794aae3"
   dependencies:
     "@babel/runtime" "^7.0.0"
     object-fit-images "^3.2.4"
@@ -5473,9 +5473,9 @@ gatsby-transformer-sharp@2.2.6:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@2.13.68:
-  version "2.13.68"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.68.tgz#74ba4f8e85402ebb49e95d1d93a737698f1dedfb"
+gatsby@2.13.69:
+  version "2.13.69"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.69.tgz#0c66d7aeb531efe3c9c50223a7131a9143c6accc"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
