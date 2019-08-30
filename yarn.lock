@@ -5726,9 +5726,9 @@ gatsby-page-utils@^0.0.14:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-manifest@2.2.10:
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.10.tgz#b4b3cc52390979bb34615302ea4aed6e5b0cbb68"
+gatsby-plugin-manifest@2.2.11:
+  version "2.2.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.11.tgz#4ed905dc24cabd8f23d3bfae3c9259ad81852222"
   dependencies:
     "@babel/runtime" "^7.5.5"
     gatsby-core-utils "^1.0.6"
@@ -5850,9 +5850,9 @@ gatsby-remark-images-contentful@2.1.10:
     sharp "^0.23.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-prismjs@3.3.9:
-  version "3.3.9"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.9.tgz#20eb5fdf1d5481672517058216e8e817fc43c986"
+gatsby-remark-prismjs@3.3.10:
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.10.tgz#4e8bb96cb0a049eff39e40a7d18535d6e9cb69a1"
   dependencies:
     "@babel/runtime" "^7.5.5"
     parse-numeric-range "^0.0.2"
@@ -5958,9 +5958,9 @@ gatsby-transformer-sharp@2.2.12:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@2.14.7:
-  version "2.14.7"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.14.7.tgz#99ea16ac9f63d54f1475c5afd514c1c19a9257b5"
+gatsby@2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.0.tgz#f435217b25a5cbba87ab40282723c4e863f117be"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.5.5"
