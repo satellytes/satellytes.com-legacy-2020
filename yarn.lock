@@ -5920,9 +5920,9 @@ gatsby-telemetry@^1.1.21:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-remark@2.6.20:
-  version "2.6.20"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.20.tgz#426b4865e90d5c819cd2e25d143c9feb0f757a96"
+gatsby-transformer-remark@2.6.21:
+  version "2.6.21"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.21.tgz#1c40ed468f00b770926bdc1d62c573d3b338e99f"
   dependencies:
     "@babel/runtime" "^7.5.5"
     bluebird "^3.5.5"
