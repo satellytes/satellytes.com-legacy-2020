@@ -5860,9 +5860,9 @@ gatsby-remark-prismjs@3.3.12:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.31:
-  version "2.1.31"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.31.tgz#1ba50819b60ecd0a2e6307a5d724c99aa5e044b3"
+gatsby-source-contentful@2.1.32:
+  version "2.1.32"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.32.tgz#d2ef21fe9ac512f2cee8f1d2193d4c6f607b61c1"
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@hapi/joi" "^15.1.1"
@@ -5874,15 +5874,15 @@ gatsby-source-contentful@2.1.31:
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
     gatsby-plugin-sharp "^2.2.19"
-    gatsby-source-filesystem "^2.1.20"
+    gatsby-source-filesystem "^2.1.21"
     is-online "^8.2.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     qs "^6.8.0"
 
-gatsby-source-filesystem@2.1.20, gatsby-source-filesystem@^2.1.20:
-  version "2.1.20"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.20.tgz#ef39ae9d138976b2db74bbf558bc960c39daaa5e"
+gatsby-source-filesystem@2.1.21, gatsby-source-filesystem@^2.1.21:
+  version "2.1.21"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.21.tgz#4d52383887bfa40c484523372f9629e92af6769a"
   dependencies:
     "@babel/runtime" "^7.5.5"
     better-queue "^3.8.10"
@@ -5898,7 +5898,7 @@ gatsby-source-filesystem@2.1.20, gatsby-source-filesystem@^2.1.20:
     progress "^2.0.3"
     read-chunk "^3.2.0"
     valid-url "^1.0.9"
-    xstate "^3.3.3"
+    xstate "^4.6.7"
 
 gatsby-telemetry@^1.1.22:
   version "1.1.22"
@@ -13546,10 +13546,6 @@ xmlbuilder@~9.0.1:
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
-
-xstate@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-3.3.3.tgz#64177cd4473d4c2424b3df7d2434d835404b09a9"
 
 xstate@^4.6.7:
   version "4.6.7"
