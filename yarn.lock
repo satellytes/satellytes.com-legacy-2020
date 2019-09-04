@@ -5308,9 +5308,9 @@ file-type@^10.7.0:
   version "10.11.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-10.11.0.tgz#2961d09e4675b9fb9a3ee6b69e9cd23f43fd1890"
 
-file-type@^12.2.0:
-  version "12.2.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.2.0.tgz#bc4bce830e38a96a0ecfea0e2dfcee2855ed1380"
+file-type@^12.3.0:
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.3.0.tgz#74d755e5dc9c5cbc7ee6f182529b453906ac88c2"
 
 file-type@^3.1.0, file-type@^3.8.0:
   version "3.9.0"
@@ -5693,23 +5693,23 @@ gatsby-core-utils@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.7.tgz#0f41dd91da2f2acb59e102ad4c6a4cffeb176b05"
 
-gatsby-graphiql-explorer@^0.2.10:
-  version "0.2.10"
-  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.10.tgz#8a8eaec3ee0d1f79d4b26a6882040d2f48e4ac9c"
+gatsby-graphiql-explorer@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.11.tgz#c0a20f2b248f89abdc95502b612fe22e6c29f1d3"
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-image@2.2.16:
-  version "2.2.16"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.16.tgz#dcee73cfa820ed0b8115888b3275da3c6e940c81"
+gatsby-image@2.2.17:
+  version "2.2.17"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.17.tgz#3c776be5406baa7341416eca41d112ef37a2234b"
   dependencies:
     "@babel/runtime" "^7.5.5"
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-gatsby-link@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.11.tgz#e460ef0e904bf4cf28e5955d4426d57cc279ec84"
+gatsby-link@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.12.tgz#ccc0f41b744bf57b318e50e3788c5e12a95906fe"
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@types/reach__router" "^1.2.4"
@@ -5860,9 +5860,9 @@ gatsby-remark-prismjs@3.3.12:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.30:
-  version "2.1.30"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.30.tgz#1e5bdf226bd66bae3435fab39affbdd21033d0d6"
+gatsby-source-contentful@2.1.31:
+  version "2.1.31"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.31.tgz#1ba50819b60ecd0a2e6307a5d724c99aa5e044b3"
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@hapi/joi" "^15.1.1"
@@ -5874,21 +5874,21 @@ gatsby-source-contentful@2.1.30:
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
     gatsby-plugin-sharp "^2.2.19"
-    gatsby-source-filesystem "^2.1.19"
+    gatsby-source-filesystem "^2.1.20"
     is-online "^8.2.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     qs "^6.8.0"
 
-gatsby-source-filesystem@2.1.19, gatsby-source-filesystem@^2.1.19:
-  version "2.1.19"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.19.tgz#7fbe258ddd7d2feb0393c58af71b304798bf25a2"
+gatsby-source-filesystem@2.1.20, gatsby-source-filesystem@^2.1.20:
+  version "2.1.20"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.20.tgz#ef39ae9d138976b2db74bbf558bc960c39daaa5e"
   dependencies:
     "@babel/runtime" "^7.5.5"
     better-queue "^3.8.10"
     bluebird "^3.5.5"
     chokidar "3.0.2"
-    file-type "^12.2.0"
+    file-type "^12.3.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.7"
     got "^7.1.0"
@@ -5960,9 +5960,9 @@ gatsby-transformer-sharp@2.2.13:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@2.15.5:
-  version "2.15.5"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.5.tgz#9372ef8e1bef721a24d0c54cbbd122ca36a23e3b"
+gatsby@2.15.6:
+  version "2.15.6"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.6.tgz#b69ff6a51eac7ae8e378ee24b963de9082fd7be2"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -6026,8 +6026,8 @@ gatsby@2.15.5:
     fs-extra "^8.1.0"
     gatsby-cli "^2.7.44"
     gatsby-core-utils "^1.0.7"
-    gatsby-graphiql-explorer "^0.2.10"
-    gatsby-link "^2.2.11"
+    gatsby-graphiql-explorer "^0.2.11"
+    gatsby-link "^2.2.12"
     gatsby-plugin-page-creator "^2.1.16"
     gatsby-react-router-scroll "^2.1.7"
     gatsby-telemetry "^1.1.22"
