@@ -5711,9 +5711,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-gatsby-cli@^2.7.46:
-  version "2.7.46"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.46.tgz#35f24372e6442f2a9dfab5cd9281b6f939c6d1f9"
+gatsby-cli@^2.7.47:
+  version "2.7.47"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.47.tgz#3e490b1c930345f7e1cc759f8cfcab36b878e1b4"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/runtime" "^7.6.0"
@@ -6027,9 +6027,9 @@ gatsby-transformer-sharp@2.2.14:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@2.15.12:
-  version "2.15.12"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.12.tgz#db36ea5ce9429576ffac7c0546a4a65f0be353cb"
+gatsby@2.15.13:
+  version "2.15.13"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.13.tgz#3de3f2a83ea26f7fdf3bf03f123d29c1acf0225c"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.0"
@@ -6091,7 +6091,7 @@ gatsby@2.15.12:
     flat "^4.1.0"
     fs-exists-cached "1.0.0"
     fs-extra "^8.1.0"
-    gatsby-cli "^2.7.46"
+    gatsby-cli "^2.7.47"
     gatsby-core-utils "^1.0.8"
     gatsby-graphiql-explorer "^0.2.14"
     gatsby-link "^2.2.13"
