@@ -5932,9 +5932,9 @@ gatsby-remark-prismjs@3.3.14:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.40:
-  version "2.1.40"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.40.tgz#e25276b37f8f5d354908d2cf317b9fc10c539c56"
+gatsby-source-contentful@2.1.41:
+  version "2.1.41"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.41.tgz#193ce3ea88039a5c3dad5cf4cc87297de0d6fd29"
   dependencies:
     "@babel/runtime" "^7.6.0"
     "@hapi/joi" "^15.1.1"
@@ -5950,7 +5950,7 @@ gatsby-source-contentful@2.1.40:
     is-online "^8.2.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
-    qs "^6.8.0"
+    qs "^6.9.0"
 
 gatsby-source-filesystem@2.1.26, gatsby-source-filesystem@^2.1.26:
   version "2.1.26"
@@ -6032,9 +6032,9 @@ gatsby-transformer-sharp@2.2.16:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@2.15.20:
-  version "2.15.20"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.20.tgz#f79aae8f086b49b08dc1126866c8a77b4039849c"
+gatsby@2.15.21:
+  version "2.15.21"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.21.tgz#d313bd6c4eed48dd2d1c682e9e4b80045a0257af"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.0"
@@ -6111,7 +6111,7 @@ gatsby@2.15.20:
     invariant "^2.2.4"
     is-relative "^1.0.0"
     is-relative-url "^3.0.0"
-    is-wsl "^2.1.0"
+    is-wsl "^2.1.1"
     jest-worker "^24.9.0"
     json-loader "^0.5.7"
     json-stringify-safe "^5.0.1"
@@ -7815,9 +7815,9 @@ is-wsl@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
 
-is-wsl@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.1.0.tgz#94369bbeb2249ef07b831b1b08590e686330ccbb"
+is-wsl@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.1.1.tgz#4a1c152d429df3d441669498e2486d3596ebaf1d"
 
 is-zip@^1.0.0:
   version "1.0.0"
@@ -10557,9 +10557,9 @@ qs@^6.5.2, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
-qs@^6.8.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
+qs@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
 
 query-string@^4.1.0:
   version "4.3.4"
