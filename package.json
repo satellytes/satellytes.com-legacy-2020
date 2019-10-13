@@ -55,7 +55,7 @@
     "format": "prettier --write '**/*.js'"
   },
   "devDependencies": {
-    "core-js": "2.6.9",
+    "core-js": "2.6.10",
     "prettier": "1.18.2",
     "tslint": "5.20.0",
     "tslint-react": "4.1.0",
