@@ -5717,9 +5717,9 @@ gatsby-remark-prismjs@3.3.25:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.64:
-  version "2.1.64"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.64.tgz#83d728929012ec106ce0d39a082ba51ac956a408"
+gatsby-source-contentful@2.1.65:
+  version "2.1.65"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.65.tgz#733b5f4bf3962bce4f10f6436331abcf8fd91c5e"
   dependencies:
     "@babel/runtime" "^7.7.4"
     "@hapi/joi" "^15.1.1"
@@ -5732,7 +5732,7 @@ gatsby-source-contentful@2.1.64:
     fs-extra "^8.1.0"
     gatsby-plugin-sharp "^2.3.4"
     gatsby-source-filesystem "^2.1.39"
-    is-online "^8.2.0"
+    is-online "^8.2.1"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     qs "^6.9.1"
@@ -5817,9 +5817,9 @@ gatsby-transformer-sharp@2.3.6:
     semver "^5.7.1"
     sharp "^0.23.3"
 
-gatsby@2.18.4:
-  version "2.18.4"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.18.4.tgz#0d359e83e1939df5e9e04af3a3673703900f1913"
+gatsby@2.18.5:
+  version "2.18.5"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.18.5.tgz#970e6b550582623fe33d1eab7160037681c00fab"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.4"
@@ -7406,9 +7406,9 @@ is-object@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-object/-/is-object-1.0.1.tgz#8952688c5ec2ffd6b03ecc85e769e02903083470"
 
-is-online@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/is-online/-/is-online-8.2.0.tgz#24970d5604919a60195f57508fca5dc6a4ead6f4"
+is-online@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/is-online/-/is-online-8.2.1.tgz#855d0845c2f5be93625192838d82ce9cce29f7e3"
   dependencies:
     got "^9.6.0"
     p-any "^2.0.0"
