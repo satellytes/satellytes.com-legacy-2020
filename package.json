@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/react-helmet": "5.0.15",
     "@types/styled-components": "4.4.2",
-    "babel-plugin-styled-components": "1.10.6",
+    "babel-plugin-styled-components": "1.10.7",
     "basicscroll": "3.0.2",
     "classnames": "2.2.6",
     "eases": "1.0.8",
