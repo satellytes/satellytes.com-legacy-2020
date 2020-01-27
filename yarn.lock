@@ -5722,9 +5722,9 @@ gatsby-plugin-sass@2.1.27:
     "@babel/runtime" "^7.7.6"
     sass-loader "^7.3.1"
 
-gatsby-plugin-sharp@2.4.0, gatsby-plugin-sharp@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.4.0.tgz#9df4c2646a34fb7ea4ff5428f6662ef3c0a80cde"
+gatsby-plugin-sharp@2.4.2, gatsby-plugin-sharp@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.4.2.tgz#30f010fcc3559282eaa24e4c9cb1644d491efb9b"
   dependencies:
     "@babel/runtime" "^7.7.6"
     async "^2.6.3"
@@ -5808,9 +5808,9 @@ gatsby-remark-prismjs@3.3.30:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.79:
-  version "2.1.79"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.79.tgz#5a3ed75a68e440e659c26c1e5ae22fa8a73ba1e8"
+gatsby-source-contentful@2.1.81:
+  version "2.1.81"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.81.tgz#8ddaaf597d6d58f112d27317dd65eceeddc23fe6"
   dependencies:
     "@babel/runtime" "^7.7.6"
     "@hapi/joi" "^15.1.1"
@@ -5822,7 +5822,7 @@ gatsby-source-contentful@2.1.79:
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.26"
-    gatsby-plugin-sharp "^2.4.0"
+    gatsby-plugin-sharp "^2.4.2"
     gatsby-source-filesystem "^2.1.46"
     is-online "^8.2.1"
     json-stringify-safe "^5.0.1"
@@ -5909,9 +5909,9 @@ gatsby-transformer-sharp@2.3.13:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@2.19.3:
-  version "2.19.3"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.3.tgz#16b7e0f1067a05b12f52d5899cef14473cb02b81"
+gatsby@2.19.6:
+  version "2.19.6"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.6.tgz#469dbeb3d3edf22be0cb3f50b101e0d98573b328"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
