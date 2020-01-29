@@ -5808,9 +5808,9 @@ gatsby-remark-prismjs@3.3.30:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.82:
-  version "2.1.82"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.82.tgz#3a44a49ab2166014daa097e31cfd7033dc250c78"
+gatsby-source-contentful@2.1.83:
+  version "2.1.83"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.83.tgz#2d54fabdf0ba527b8bcf51a5e4e7b13e080671c7"
   dependencies:
     "@babel/runtime" "^7.7.6"
     "@hapi/joi" "^15.1.1"
@@ -5909,9 +5909,9 @@ gatsby-transformer-sharp@2.3.13:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@2.19.8:
-  version "2.19.8"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.8.tgz#318f9c9eb9b38c9f3988884db69000ce1b08acfc"
+gatsby@2.19.9:
+  version "2.19.9"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.9.tgz#45421225adfe8c4f2bbe038bc719f3f31b4a812e"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
