@@ -5783,9 +5783,9 @@ gatsby-plugin-typescript@2.1.27:
     "@babel/runtime" "^7.7.6"
     babel-plugin-remove-graphql-queries "^2.7.23"
 
-gatsby-react-router-scroll@^2.1.21:
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.21.tgz#bc4aeee424da034287b6fe64d6b08f47d6cb6881"
+gatsby-react-router-scroll@^2.1.22:
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.22.tgz#588b4a23004997481082d89fc4dd746f6a356ab5"
   dependencies:
     "@babel/runtime" "^7.7.6"
     scroll-behavior "^0.9.10"
@@ -5819,9 +5819,9 @@ gatsby-remark-prismjs@3.3.31:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.88:
-  version "2.1.88"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.88.tgz#4359ade43f7ea9b0b43957f9efd327e9bba0a7de"
+gatsby-source-contentful@2.1.89:
+  version "2.1.89"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.89.tgz#f1d9990eb6180617207e0b1781c2f4731868c3d4"
   dependencies:
     "@babel/runtime" "^7.7.6"
     "@contentful/rich-text-types" "^13.1.0"
@@ -5921,9 +5921,9 @@ gatsby-transformer-sharp@2.3.16:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@2.19.22:
-  version "2.19.22"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.22.tgz#23696b9d9e0ef5195fcda8f8f6c00bfc60695891"
+gatsby@2.19.23:
+  version "2.19.23"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.23.tgz#cd4abbef59339906b99a55101858d50c8dc91aed"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
@@ -5989,7 +5989,7 @@ gatsby@2.19.22:
     gatsby-graphiql-explorer "^0.2.34"
     gatsby-link "^2.2.29"
     gatsby-plugin-page-creator "^2.1.40"
-    gatsby-react-router-scroll "^2.1.21"
+    gatsby-react-router-scroll "^2.1.22"
     gatsby-telemetry "^1.1.49"
     glob "^7.1.6"
     got "8.3.2"
