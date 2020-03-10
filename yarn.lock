@@ -5761,9 +5761,9 @@ gatsby-plugin-sass@2.1.30:
     "@babel/runtime" "^7.7.6"
     sass-loader "^7.3.1"
 
-gatsby-plugin-sharp@2.4.8, gatsby-plugin-sharp@^2.4.8:
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.4.8.tgz#31c96afaee4af882ec0d60b0ffbd785b64c12dad"
+gatsby-plugin-sharp@2.4.9, gatsby-plugin-sharp@^2.4.9:
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.4.9.tgz#f0cf9fcb722dea88d2ab698fad45065e3e75f848"
   dependencies:
     "@babel/runtime" "^7.7.6"
     async "^2.6.3"
@@ -5848,9 +5848,9 @@ gatsby-remark-prismjs@3.3.33:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@2.1.92:
-  version "2.1.92"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.92.tgz#6016fec2aeda5d32c06ca0c87de22a201fe5eac5"
+gatsby-source-contentful@2.1.93:
+  version "2.1.93"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.93.tgz#98647966287f7aca557d98a31a7b44a30f40e78f"
   dependencies:
     "@babel/runtime" "^7.7.6"
     "@contentful/rich-text-types" "^13.1.0"
@@ -5863,7 +5863,7 @@ gatsby-source-contentful@2.1.92:
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.31"
-    gatsby-plugin-sharp "^2.4.8"
+    gatsby-plugin-sharp "^2.4.9"
     gatsby-source-filesystem "^2.1.51"
     is-online "^8.2.1"
     json-stringify-safe "^5.0.1"
@@ -5938,9 +5938,9 @@ gatsby-transformer-remark@2.6.56:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.4.1"
 
-gatsby-transformer-sharp@2.3.17:
-  version "2.3.17"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.17.tgz#465609abbfb6e9664a3e1acc7a2bd3e8eb157000"
+gatsby-transformer-sharp@2.3.18:
+  version "2.3.18"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.3.18.tgz#fca5a444ca46d565a98d82088c31292bab83955b"
   dependencies:
     "@babel/runtime" "^7.7.6"
     bluebird "^3.7.2"
@@ -5950,9 +5950,9 @@ gatsby-transformer-sharp@2.3.17:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby@2.19.34:
-  version "2.19.34"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.34.tgz#31c013da278c39e7261af610c04ef15960a5e014"
+gatsby@2.19.35:
+  version "2.19.35"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.35.tgz#728a1fb2a1beae9fbc49490a5c60b503880da49a"
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
