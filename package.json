@@ -5,7 +5,7 @@
   "author": "Georgios Kaleadis <georgios.kaleadis@satellytes.com>",
   "dependencies": {
     "@types/react-helmet": "5.0.15",
-    "@types/styled-components": "4.4.3",
+    "@types/styled-components": "5.0.1",
     "babel-plugin-styled-components": "1.10.7",
     "basicscroll": "3.0.2",
     "classnames": "2.2.6",
@@ -43,7 +43,7 @@
     "react-transition-group": "3.0.0",
     "react-waypoint": "8.1.0",
     "rehype-react": "3.1.0",
-    "styled-components": "4.4.1",
+    "styled-components": "5.0.1",
     "styled-components-breakpoint": "2.1.1",
     "typeface-roboto": "0.0.75",
     "yup": "0.28.3"
