@@ -57,7 +57,7 @@
   "devDependencies": {
     "core-js": "2.6.11",
     "prettier": "1.19.1",
-    "tslint": "5.20.1",
+    "tslint": "6.1.0",
     "tslint-react": "4.1.0",
     "typescript": "3.8.3"
   },
