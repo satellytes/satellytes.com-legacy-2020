@@ -58,22 +58,6 @@ const SectionWhat = ({data}) => (
       <HeadlineSection>Das können andere besser</HeadlineSection>
       <Copy>SEM, XR, E-Commerce, Werbung, Marketing, einfache Websites und vieles mehr. Durch unser breites und zuverlässiges Netzwerk an Freelancern und Agenturen finden wir aber für alle Ihre Ansprüche immer eine perfekte Lösung. Beauftragen Sie uns und wir stellen Ihnen vollkommen transparent ein passendes Team zusammen.</Copy>
     </Section>
-
-    <Section>
-      <HeadlineSection>Unsere Kunden</HeadlineSection>
-      <Copy>Für diese Kunden haben wir in den letzten Jahren größere Projekte realisiert oder sind noch dabei</Copy>
-    </Section>
-
-    <Section>
-      <Clients />
-    </Section>
-
-    <Section>
-      <HeadlineSection>Und viele weitere</HeadlineSection>
-      <Copy>
-      Unsere Mitarbeiter haben vor ihrer Karriere bei Satellytes viele Jahre in anderen Agenturen oder als Freelancer gearbeitet. In dieser Zeit wurden Launches, Relaunches oder andere Großprojekte realisiert. Unter anderem für Kunden wie: Mercedes-Benz, Audi, MINI, Coca-Cola, Vitra, Swarovski, Glamour, Montblanc, O2, T-Mobile, Deutsche Post, P&S Reemtsma, Bacardi, Bogner, Siemens, Siemens Mobile, T-Online, Pritt, BMW, Mazda, Constantin Film, Esprit, etc.
-      </Copy>
-    </Section>
   </Content>
 )
 
